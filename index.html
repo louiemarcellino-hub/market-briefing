@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Market Briefing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Market Briefing</h1>
+    <p class="tagline">The numbers every private banker should know, explained in plain English.</p>
+    <p class="disclaimer">For learning, not investment advice.</p>
+
+    <!-- Level switch: changes how deep every "What it is" explanation goes. -->
+    <div class="level-switch" role="group" aria-label="Explanation level">
+      <span class="level-label">Level:</span>
+      <button type="button" data-level="beginner">Beginner</button>
+      <button type="button" data-level="intermediate">Intermediate</button>
+      <button type="button" data-level="advanced">Advanced</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Shows whether we're looking at SAMPLE or real data. -->
+    <p id="data-badge" class="data-badge"></p>
+
+    <!-- The tiles get built here by app.js, one per number in the data file. -->
+    <section id="tiles" class="tiles"></section>
+
+    <!-- Recent events. app.js fills this in from the data file's "events" list. -->
+    <section id="events-section" class="events" hidden>
+      <h2>What's been happening</h2>
+      <p class="events-intro">Recent market events from official data, newest first. Each card's color matches its number above.</p>
+      <div id="events-list" class="events-list"></div>
+    </section>
+
+    <!-- Big themes: the forces behind the numbers. app.js fills this in from the data file. -->
+    <section id="themes-section" class="themes" hidden>
+      <h2>Big themes</h2>
+      <p class="themes-intro">The bigger forces behind the numbers, explained neutrally. For specific news events, check a dated news source.</p>
+      <div id="themes-list" class="themes-list"></div>
+    </section>
+
+    <!-- Investing 101: tap a lesson to open it. app.js fills this in from investing-lessons.js. -->
+    <section id="investing-section" class="investing" hidden>
+      <h2>Investing 101</h2>
+      <p class="investing-intro">The core ideas, in order. Each one builds on the last. Education only, never advice on what to buy.</p>
+      <div id="investing-list" class="investing-list"></div>
+    </section>
+
+    <!-- Test yourself: a concepts quiz. quiz.js fills this in from quiz-questions.js. -->
+    <section class="quiz-section">
+      <h2>Test yourself</h2>
+      <p class="quiz-intro">Cause-and-effect questions, the kind interviewers ask. Original questions written for this app.</p>
+      <div id="quiz" class="quiz"></div>
+    </section>
+
+    <!-- The full glossary, A to Z. app.js fills it in from glossary.js. -->
+    <section class="glossary">
+      <h2>Glossary</h2>
+      <p class="glossary-intro">Underlined words in the lessons can be tapped for a quick definition. Here's the full list.</p>
+      <dl id="glossary-list"></dl>
+    </section>
+  </main>
+
+  <!-- 1. Load the data file first, 2. then the code that turns it into tiles.
+       To go back to the invented numbers, swap this line for:
+       <script src="sample/SAMPLE_market-data.js"></script> -->
+  <script src="public-data/market-data.js"></script>
+  <script src="glossary.js"></script>
+  <script src="investing-lessons.js"></script>
+  <script src="public-data/briefings.js"></script>
+  <script src="app.js"></script>
+  <!-- The oil price chart: its data first, then the code that draws it. -->
+  <script src="public-data/energy-chart-data.js"></script>
+  <script src="chart.js"></script>
+  <!-- The quiz: its questions first, then the code that runs it. -->
+  <script src="quiz-questions.js"></script>
+  <script src="quiz.js"></script>
+</body>
+</html>

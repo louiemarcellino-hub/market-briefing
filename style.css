@@ -1,0 +1,734 @@
+/* Market Briefing: bold scoreboard style.
+   Each number gets its own bright color so you can find it at a glance.
+   Colors identify the number, they never mean "good" or "bad". */
+
+:root {
+  --bg: #0f172a;          /* deep navy page, like a scoreboard */
+  --text: #ffffff;
+  --muted: #cbd5e1;
+  --highlight: #facc15;   /* scoreboard yellow */
+
+  /* One color per number */
+  --sp500: #2563eb;        /* blue */
+  --treasury10: #7c3aed;   /* purple */
+  --fedfunds: #c2410c;     /* orange */
+  --cpi: #be185d;          /* pink */
+  --unemployment: #0f766e; /* teal */
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 32px 24px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: 2.6rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.tagline {
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin: 0 0 8px;
+}
+
+.disclaimer {
+  font-weight: bold;
+  color: var(--highlight);
+  margin: 0;
+}
+
+/* --- Level switch --- */
+
+.level-switch {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.level-label {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+}
+
+.level-switch button {
+  font: inherit;
+  font-weight: 800;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 2px solid var(--highlight);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* The chosen level is filled in yellow. */
+.level-switch button[aria-pressed="true"] {
+  background: var(--highlight);
+  color: #111;
+}
+
+/* Show only the explanation that matches the chosen level. */
+.lvl { display: none; }
+body[data-level="beginner"] .lvl-beginner,
+body[data-level="intermediate"] .lvl-intermediate,
+body[data-level="advanced"] .lvl-advanced {
+  display: block;
+}
+
+.level-tag {
+  color: var(--text);
+  opacity: 0.75;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+/* The SAMPLE / real data label: a yellow stripe so it can't be missed. */
+.data-badge {
+  display: inline-block;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  background: var(--highlight);
+  color: #111;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin: 0 0 20px;
+}
+
+/* Lay the tiles out in a grid that wraps on smaller screens. */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.tile {
+  border-radius: 16px;
+  padding: 22px;
+  min-height: 180px;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.35);
+}
+
+/* Each tile picks up its own color from its id. */
+.tile-sp500        { background: var(--sp500); }
+.tile-treasury10   { background: var(--treasury10); }
+.tile-fedfunds     { background: var(--fedfunds); }
+.tile-cpi          { background: var(--cpi); }
+.tile-unemployment { background: var(--unemployment); }
+
+.tile-name {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* The big scoreboard number. "tabular-nums" makes every digit the same width. */
+.tile-value {
+  font-size: 2.8rem;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+  margin: 10px 0;
+}
+
+/* The direction pill: arrow + how much it moved. Same white for up and down. */
+.tile-change {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin: 0 0 14px;
+}
+
+.tile-arrow {
+  margin-right: 6px;
+}
+
+.tile-source {
+  font-size: 0.8rem;
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* "How often it's published" note, on its own line under the source. */
+.tile-updates {
+  display: block;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* --- Learn-as-you-go --- */
+
+.tile-button {
+  margin-top: 16px;
+  background: var(--highlight);
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.tile-button:hover {
+  filter: brightness(1.08);
+}
+
+/* Each lesson is a darker panel inside the tile. */
+.lesson {
+  background: rgba(0, 0, 0, 0.28);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: 12px;
+}
+
+.lesson h3 {
+  margin: 0 0 6px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--highlight);
+}
+
+.lesson p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.lesson ul {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.45;
+}
+
+.lesson li + li {
+  margin-top: 12px;
+}
+
+.lesson .question {
+  font-weight: 700;
+}
+
+/* The explanation under each question: smaller and softer, so the question stands out. */
+.lesson .question-why {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  opacity: 0.88;
+}
+
+/* Make sure hidden lessons really disappear. */
+.lesson[hidden] {
+  display: none;
+}
+
+/* --- Recent events --- */
+
+.events {
+  margin-top: 40px;
+}
+
+.events[hidden] {
+  display: none;
+}
+
+.events h2 {
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0 0 6px;
+}
+
+.events-intro {
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.events-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+/* Each event is a dark card with a thick stripe in its tile's color. */
+.event {
+  background: #1e293b;
+  border-radius: 14px;
+  border-left: 10px solid var(--muted);
+  padding: 18px 20px;
+  line-height: 1.45;
+}
+
+.event-sp500        { border-left-color: var(--sp500); }
+.event-treasury10   { border-left-color: var(--treasury10); }
+.event-fedfunds     { border-left-color: var(--fedfunds); }
+.event-cpi          { border-left-color: var(--cpi); }
+.event-unemployment { border-left-color: var(--unemployment); }
+
+.event-when {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--highlight);
+}
+
+.event-headline {
+  margin: 6px 0 10px;
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.event p {
+  margin: 0 0 8px;
+}
+
+.event-source {
+  font-size: 0.85rem;
+}
+
+.event-source a {
+  color: var(--muted);
+}
+
+.event-source a:hover {
+  color: var(--highlight);
+}
+
+/* --- Big themes --- */
+
+.themes {
+  margin-top: 40px;
+}
+
+.themes[hidden] {
+  display: none;
+}
+
+.themes h2 {
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0 0 6px;
+}
+
+.themes-intro {
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.themes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+/* Theme cards: dark with a yellow top bar, so they read as a different kind of card. */
+.theme {
+  background: #1e293b;
+  border-top: 8px solid var(--highlight);
+  border-radius: 14px;
+  padding: 20px;
+  line-height: 1.45;
+}
+
+.theme-title {
+  margin: 0 0 12px;
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+.theme-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.theme-stat {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.theme-stat p {
+  margin: 0;
+}
+
+.theme-stat-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.theme-stat-value {
+  font-size: 1.8rem;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+}
+
+.theme-stat-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.theme-asof {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--muted);
+  margin: 8px 0 0;
+}
+
+/* --- Oil price chart --- */
+
+.theme-chart {
+  margin-top: 14px;
+}
+
+.chart-wrap {
+  position: relative;
+}
+
+.chart-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  touch-action: pan-y;
+  cursor: crosshair;
+  border-radius: 8px;
+}
+
+.chart-svg:focus-visible {
+  outline: 2px solid var(--highlight);
+  outline-offset: 2px;
+}
+
+.chart-grid  { stroke: rgba(255, 255, 255, 0.10); stroke-width: 1; }
+.chart-axis  { fill: var(--muted); font-size: 11px; }
+.chart-line  { fill: none; stroke: var(--highlight); stroke-width: 2; stroke-linejoin: round; }
+.chart-area  { fill: rgba(250, 204, 21, 0.10); }
+.chart-guide { stroke: rgba(255, 255, 255, 0.5); stroke-width: 1; stroke-dasharray: 3 3; }
+/* Dots get a ring in the card's color so they stand out from the line. */
+.chart-dot   { fill: var(--highlight); stroke: #1e293b; stroke-width: 2; }
+.chart-label { fill: var(--text); font-size: 12px; font-weight: 700; }
+
+.chart-tip {
+  position: absolute;
+  transform: translateX(-50%);
+  background: #ffffff;
+  color: #111;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.chart-tip[hidden] {
+  display: none;
+}
+
+.chart-caption {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-style: italic;
+  margin: 6px 0 0;
+}
+
+/* News briefings inside theme cards: a fold-out with a yellow left edge. */
+.briefing {
+  margin-top: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid var(--highlight);
+  border-radius: 10px;
+  padding: 4px 14px;
+}
+
+.briefing[open] {
+  padding-bottom: 12px;
+}
+
+.briefing summary {
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.briefing-title {
+  font-weight: 900;
+  font-size: 1.05rem;
+}
+
+.briefing-asof {
+  display: block;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.theme .event-source {
+  margin-top: 12px;
+}
+
+/* --- Investing 101 --- */
+
+.investing {
+  margin-top: 40px;
+  max-width: 800px;
+}
+
+.investing[hidden] {
+  display: none;
+}
+
+.investing h2 {
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0 0 6px;
+}
+
+.investing-intro {
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.investing-list {
+  display: grid;
+  gap: 10px;
+}
+
+.invest-lesson {
+  background: #1e293b;
+  border-left: 8px solid var(--unemployment);
+  border-radius: 12px;
+  padding: 4px 18px;
+  line-height: 1.45;
+}
+
+.invest-lesson[open] {
+  padding-bottom: 16px;
+}
+
+.invest-lesson summary {
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 800;
+  padding: 12px 0;
+  list-style-position: outside;
+}
+
+.invest-num {
+  display: inline-block;
+  min-width: 1.8em;
+  margin-right: 8px;
+  text-align: center;
+  background: var(--highlight);
+  color: #111;
+  border-radius: 6px;
+  font-weight: 900;
+}
+
+/* --- Quiz --- */
+
+.quiz-section {
+  margin-top: 40px;
+  max-width: 800px;
+}
+
+.quiz-section h2 {
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0 0 6px;
+}
+
+.quiz-intro {
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.quiz {
+  background: #1e293b;
+  border-top: 8px solid var(--sp500);
+  border-radius: 14px;
+  padding: 20px;
+  line-height: 1.45;
+}
+
+.quiz-progress {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--highlight);
+}
+
+.quiz-question {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 8px 0 14px;
+}
+
+.quiz-choices {
+  display: grid;
+  gap: 8px;
+}
+
+.quiz-choice {
+  font: inherit;
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.quiz-choice:hover:not(:disabled) {
+  border-color: var(--highlight);
+}
+
+.quiz-choice:disabled {
+  cursor: default;
+}
+
+/* Right and wrong answers: color plus a ✓ / ✗ mark, so it's never color alone. */
+.quiz-choice.is-right {
+  border-color: #22c55e;
+  background: rgba(34, 197, 94, 0.18);
+  font-weight: 700;
+}
+
+.quiz-choice.is-wrong {
+  border-color: #f87171;
+  background: rgba(248, 113, 113, 0.15);
+}
+
+.quiz-feedback {
+  margin-top: 14px;
+}
+
+.quiz-feedback[hidden] {
+  display: none;
+}
+
+.quiz-verdict {
+  font-weight: 900;
+  margin: 0 0 4px;
+}
+
+.quiz-why {
+  margin: 0 0 12px;
+}
+
+.quiz-score {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 4px 0;
+}
+
+.quiz-next {
+  font: inherit;
+  font-weight: 800;
+  background: var(--highlight);
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+/* --- Glossary --- */
+
+/* A tappable word inside a lesson: looks like text with a dotted underline. */
+.term {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-decoration: underline dotted;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  cursor: help;
+}
+
+.term:hover,
+.term:focus-visible {
+  color: var(--highlight);
+}
+
+/* The definition panel that opens under a lesson when you tap a word. */
+.term-def {
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.term-def[hidden] {
+  display: none;
+}
+
+/* The full glossary at the bottom of the page. */
+.glossary {
+  margin-top: 40px;
+  max-width: 800px;
+}
+
+.glossary h2 {
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0 0 6px;
+}
+
+.glossary-intro {
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.glossary dt {
+  font-weight: 800;
+  color: var(--highlight);
+  margin-top: 14px;
+}
+
+.glossary dd {
+  margin: 4px 0 0;
+  line-height: 1.45;
+}
+
+/* The grid lines tiles up at the top, so opening one tile doesn't stretch its neighbors. */
+.tiles {
+  align-items: start;
+}
