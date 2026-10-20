@@ -21,11 +21,23 @@
     </div>
   </header>
 
+  <!-- Contents bar: sticks to the top of the screen while you scroll.
+       Each link jumps to the section with the matching id below. -->
+  <nav class="contents" aria-label="Contents">
+    <a href="#numbers">📊 Numbers</a>
+    <a href="#events-section">📅 What's happening</a>
+    <a href="#themes-section">🌍 Big themes</a>
+    <a href="#investing-section">💡 Investing 101</a>
+    <a href="#quiz-section">✅ Test yourself</a>
+    <a href="#glossary">📖 Glossary</a>
+  </nav>
+
   <main>
     <!-- Shows whether we're looking at SAMPLE or real data. -->
     <p id="data-badge" class="data-badge"></p>
 
     <!-- The tiles get built here by app.js, one per number in the data file. -->
+    <span id="numbers" class="jump-target"></span>
     <section id="tiles" class="tiles"></section>
 
     <!-- Recent events. app.js fills this in from the data file's "events" list. -->
@@ -50,14 +62,14 @@
     </section>
 
     <!-- Test yourself: a concepts quiz. quiz.js fills this in from quiz-questions.js. -->
-    <section class="quiz-section">
+    <section id="quiz-section" class="quiz-section">
       <h2>Test yourself</h2>
       <p class="quiz-intro">Cause-and-effect questions, the kind interviewers ask. Original questions written for this app.</p>
       <div id="quiz" class="quiz"></div>
     </section>
 
     <!-- The full glossary, A to Z. app.js fills it in from glossary.js. -->
-    <section class="glossary">
+    <section id="glossary" class="glossary">
       <h2>Glossary</h2>
       <p class="glossary-intro">Underlined words in the lessons can be tapped for a quick definition. Here's the full list.</p>
       <dl id="glossary-list"></dl>

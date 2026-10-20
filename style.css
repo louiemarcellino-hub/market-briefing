@@ -48,6 +48,53 @@ h1 {
   margin: 0;
 }
 
+/* --- Contents bar --- */
+
+/* Smooth scrolling when you click a contents link. */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sticks to the top of the screen. On narrow screens it scrolls sideways
+   instead of wrapping onto several lines. */
+.contents {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  margin: 0 -24px 24px;
+  padding: 10px 24px;
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom: 2px solid var(--highlight);
+}
+
+.contents a {
+  flex: none;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  white-space: nowrap;
+}
+
+.contents a:hover,
+.contents a:focus-visible {
+  background: var(--highlight);
+  color: #111;
+  border-color: var(--highlight);
+}
+
+/* When you jump to a section, leave room so the sticky bar doesn't cover its title. */
+.jump-target,
+section[id] {
+  scroll-margin-top: 70px;
+}
+
 /* --- Level switch --- */
 
 .level-switch {

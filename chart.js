@@ -28,7 +28,10 @@
   var W = 600, H = 240;
   var m = { top: 28, right: 16, bottom: 30, left: 44 };
   var t0 = pts[0].t, t1 = pts[pts.length - 1].t;
-  var yMin = 40, yMax = 150;
+  // The dollar range adjusts to the data (rounded to $20 steps), so new highs or lows always fit.
+  var vals = pts.map(function (p) { return p.v; });
+  var yMin = Math.max(0, Math.floor((Math.min.apply(null, vals) - 10) / 20) * 20);
+  var yMax = Math.ceil((Math.max.apply(null, vals) + 10) / 20) * 20;
   function x(t) { return m.left + (t - t0) / (t1 - t0) * (W - m.left - m.right); }
   function y(v) { return m.top + (yMax - v) / (yMax - yMin) * (H - m.top - m.bottom); }
 
@@ -54,7 +57,9 @@
   });
 
   // Gridlines and dollar labels (kept faint so the line stands out).
-  [60, 80, 100, 120, 140].forEach(function (v) {
+  var gridLines = [];
+  for (var g = yMin + 20; g < yMax; g += 20) gridLines.push(g);
+  gridLines.forEach(function (v) {
     svg.append(el("line", { x1: m.left, x2: W - m.right, y1: y(v), y2: y(v), class: "chart-grid" }));
     svg.append(el("text", { x: m.left - 8, y: y(v) + 4, "text-anchor": "end", class: "chart-axis" }, "$" + v));
   });
