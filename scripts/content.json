@@ -1,0 +1,178 @@
+{
+  "indicators": [
+    {
+      "id": "sp500",
+      "name": "S&P 500",
+      "source": "FRED (S&P Dow Jones Indices), close on Oct 19, 2026",
+      "updates": "Daily number · changes every trading day",
+      "whatItIs": "A single number that tracks the stock prices of 500 of the largest U.S. companies, like Apple, Microsoft and JPMorgan. When people say \"the market was up today,\" they usually mean this.",
+      "whatItIsIntermediate": "It's weighted by company size (market cap), so bigger companies count for more: a 1% move in Apple moves the index far more than a 1% move in a smaller member. A committee at S&P Dow Jones Indices picks the companies based on size, profits and how much their shares trade.",
+      "whatItIsAdvanced": "Pros watch how concentrated it is (in recent years the 10 largest companies have made up over a third of the index), its valuation (the P/E ratio: what investors pay for each $1 of yearly profit), and volatility, measured by the VIX. The number shown here is the price only; \"total return\" also counts dividends.",
+      "bankerQuestions": [
+        {
+          "q": "Did this week's drop worry you? How would you feel if it were 10% instead?",
+          "why": "This tests the client's risk tolerance: how much ups and downs they can live with. Someone who panics and sells after a drop can lock in losses, so a banker wants to know this before markets get rough."
+        },
+        {
+          "q": "Is your mix of stocks and bonds still the one that fits your goals and timeline?",
+          "why": "That mix is called asset allocation, and it does more than anything else to decide how bumpy a portfolio feels. Someone retiring in 3 years usually needs a different mix than someone investing for 30."
+        }
+      ]
+    },
+    {
+      "id": "treasury10",
+      "name": "10-Year Treasury Yield",
+      "source": "FRED (U.S. Treasury), Oct 16, 2026",
+      "updates": "Daily number · posted with a short delay",
+      "whatItIs": "The interest rate the U.S. government pays when it borrows money for 10 years. Investors treat it as the baseline \"safe\" return.",
+      "whatItIsIntermediate": "Bond prices and yields move in opposite directions: when buyers pay more for existing bonds, the yield falls. The yield reflects what investors expect inflation and Fed rates to be over the next 10 years, plus a little extra for tying money up that long.",
+      "whatItIsAdvanced": "Pros compare it with short-term yields to see the yield curve. When short-term yields are higher than long-term ones (an \"inverted\" curve), a recession has often followed. They also split the yield into expected inflation and the \"real yield\" using TIPS, Treasury bonds that adjust for inflation.",
+      "bankerQuestions": [
+        {
+          "q": "How much of your portfolio is in bonds, and do you know how sensitive they are to rate moves?",
+          "why": "Longer-term bonds swing more when yields move. That sensitivity is called duration. A client holding long bonds may see bigger price changes than they expected from a \"safe\" investment."
+        },
+        {
+          "q": "Are you planning to buy or refinance a home soon?",
+          "why": "Mortgages are one of the biggest things a private bank lends for. When yields are high, the timing and type of loan (fixed or adjustable) matter a lot to a client's monthly budget."
+        }
+      ]
+    },
+    {
+      "id": "fedfunds",
+      "name": "Fed Funds Rate",
+      "source": "FRED (Federal Reserve target range), Oct 19, 2026",
+      "updates": "Changes only at scheduled Fed meetings (about 8 a year)",
+      "whatItIs": "The interest rate banks charge each other for overnight loans. The Federal Reserve sets a target range for it, about eight times a year, to cool down or speed up the economy.",
+      "whatItIsIntermediate": "The Fed doesn't simply announce the rate. It sets a target range, then steers the real rate into it, mainly by setting the interest it pays banks on money they keep at the Fed. Decisions are made by a committee called the FOMC, which meets eight times a year.",
+      "whatItIsAdvanced": "Pros track the dot plot (Fed officials' own rate forecasts, published four times a year), Fed speeches for hints, and futures markets that show the odds traders put on the next move. They also watch the Fed's balance sheet: buying or shrinking its bond holdings is a second way it pushes rates.",
+      "bankerQuestions": [
+        {
+          "q": "How much of your money is sitting in cash, and what is it earning?",
+          "why": "Many people leave large balances in checking accounts earning close to nothing, even when rates are high. After a hike, the gap between what idle cash earns and what it could earn gets bigger."
+        },
+        {
+          "q": "Are any of your loans floating-rate? How would another hike affect your payments?",
+          "why": "A floating-rate loan's interest rate moves with the Fed. Wealthy clients often have credit lines or business loans like this, so a hike can raise their payments right away."
+        }
+      ]
+    },
+    {
+      "id": "cpi",
+      "name": "Inflation (CPI)",
+      "source": "BLS (CPI-U, 12-month change), Sept 2026",
+      "updates": "Monthly report · October's numbers come out in November",
+      "whatItIs": "How much prices for everyday things (groceries, rent, gas) went up compared with a year ago, measured by the Consumer Price Index.",
+      "whatItIsIntermediate": "The BLS tracks the prices of a \"basket\" of goods and services, weighted by how much people spend on each. Housing is the biggest piece. Headline CPI includes food and energy; core inflation leaves them out because they jump around so much.",
+      "whatItIsAdvanced": "The Fed's favorite gauge is actually a different measure, PCE inflation, from the Commerce Department. Pros also watch month-over-month changes to spot turns early, \"supercore\" (services prices minus housing), and inflation expectations from surveys and TIPS prices.",
+      "bankerQuestions": [
+        {
+          "q": "Have your living costs gone up this year? Does your plan still cover them?",
+          "why": "A financial plan assumes a certain amount of spending. If inflation pushes costs up, especially for retirees living off their savings, the plan may need a second look."
+        },
+        {
+          "q": "Is your portfolio built to grow faster than inflation over the long run?",
+          "why": "The return after inflation is called the real return. A 4% return with 3.7% inflation is only about 0.3% of real growth, so bankers focus on real returns, not just the headline number."
+        }
+      ]
+    },
+    {
+      "id": "unemployment",
+      "name": "Unemployment Rate",
+      "source": "BLS (seasonally adjusted), Sept 2026",
+      "updates": "Monthly report · October's numbers come out in November",
+      "whatItIs": "The share of people who want a job and are looking for one but don't have one.",
+      "whatItIsIntermediate": "It comes from a monthly survey of about 60,000 households. You only count as unemployed if you've looked for work recently, so people who've given up aren't counted. That's why economists also watch the labor force participation rate.",
+      "whatItIsAdvanced": "Pros pair it with the jobs report's payroll count (jobs added each month, from a separate survey of employers), wage growth, and weekly jobless claims. The Sahm rule flags a likely recession when the 3-month average unemployment rate rises 0.5 points above its low of the past year.",
+      "bankerQuestions": [
+        {
+          "q": "How secure does your income feel? How many months of expenses do you keep in cash?",
+          "why": "Cash set aside for surprises is called an emergency fund. If the job market weakens, having one means a client won't have to sell investments at a bad time to pay bills."
+        },
+        {
+          "q": "For business owners: is hiring getting harder or easier for you?",
+          "why": "Many private banking clients own businesses. How they're doing on hiring and wages tells a banker about the client's income, and about whether they might need a loan or credit line."
+        }
+      ]
+    }
+  ],
+  "themes": [
+    {
+      "id": "energy",
+      "icon": "⚡",
+      "title": "Energy prices",
+      "chart": "energy",
+      "howItWorks": "Oil is priced globally, so trouble anywhere in a major producing region can push prices up everywhere. Energy is part of the Consumer Price Index, so higher gas prices feed straight into inflation, and they also raise costs for airlines, shipping and manufacturers.",
+      "rightNow": "Oil prices have swung hard in 2026. Brent jumped from about $71 at the start of March to a peak of $138.21 on April 7, fell back near $70 by June, then climbed again from July and is now above $125. Big, fast jumps like these usually come from supply worries, such as conflict in oil-producing regions. To tie a specific jump to a specific event, check a dated news source.",
+      "clientQuestions": [
+        {
+          "q": "How are higher energy costs hitting your household budget or your business?",
+          "why": "Energy is a cost almost everyone pays. For business-owner clients (trucking, farming, manufacturing) it can squeeze profits, which affects their income and borrowing needs."
+        },
+        {
+          "q": "Do you know how much of your portfolio is tied to energy, directly or indirectly?",
+          "why": "Energy company stocks often rise with oil prices while many other companies get hurt by them. A banker wants clients to understand both sides of that exposure."
+        }
+      ],
+      "sources": [
+        {
+          "name": "FRED: Brent crude (DCOILBRENTEU)",
+          "url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
+        },
+        {
+          "name": "FRED: WTI crude (DCOILWTICO)",
+          "url": "https://fred.stlouisfed.org/series/DCOILWTICO"
+        },
+        {
+          "name": "FRED: U.S. regular gasoline (GASREGW)",
+          "url": "https://fred.stlouisfed.org/series/GASREGW"
+        }
+      ]
+    },
+    {
+      "id": "geopolitics",
+      "icon": "🌍",
+      "title": "Geopolitical risk",
+      "howItWorks": "Wars and conflicts move markets through a few channels. (1) Oil: Iran is a major oil producer, and oil equal to about a fifth of the world's use (21% in 2022, per the U.S. Energy Information Administration) passes through the Strait of Hormuz next to it, so conflict involving Iran can quickly raise oil prices. (2) Safe havens: when investors get nervous, they often move money into assets seen as safe, like Treasuries, gold and the U.S. dollar. (3) Volatility: stocks tend to swing more while the outcome is uncertain. (4) Sanctions and trade: restrictions on countries or companies can disrupt supply chains. Conflicts that don't directly involve oil supply, like the Israeli–Palestinian conflict, have tended to move global markets less, unless investors fear they could spread to oil-producing neighbors.",
+      "rightNow": "This year's oil swings (see Energy prices and its chart) show how much conflict risk can move markets. Studies of past conflicts have found that stock drops tied to geopolitical shocks were often short-lived, but not always, especially when oil prices stay high for a long time.",
+      "clientQuestions": [
+        {
+          "q": "How are the headlines making you feel about your investments?",
+          "why": "Scary news can push people to sell at the worst time. A banker's first job in a crisis is to listen and put the news in context with the client's long-term plan."
+        },
+        {
+          "q": "Is your plan built to handle a stretch of bigger ups and downs?",
+          "why": "A plan matched to the client's risk tolerance, with enough cash for near-term needs, means they don't have to make big decisions in the middle of a scary news cycle."
+        }
+      ],
+      "sources": [
+        {
+          "name": "U.S. Energy Information Administration: The Strait of Hormuz",
+          "url": "https://www.eia.gov/todayinenergy/detail.php?id=61002"
+        },
+        {
+          "name": "U.S. Energy Information Administration: World oil transit chokepoints",
+          "url": "https://www.eia.gov/international/analysis/special-topics/World_Oil_Transit_Chokepoints"
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "icon": "🤖",
+      "title": "Artificial intelligence",
+      "howItWorks": "The AI boom is shaping markets in a few ways. (1) Concentration: a handful of giant tech companies tied to AI have grown so large that the 10 biggest companies have made up over a third of the S&P 500 in recent years, so the index depends heavily on how they do. (2) Spending: companies are pouring money into data centers and chips, which also drives up demand for electricity. (3) Productivity hopes: investors are betting AI will make businesses more efficient. (4) Valuation worries: some ask whether prices have run ahead of the profits AI will actually deliver.",
+      "rightNow": "For a client, the big takeaway is that an S&P 500 index fund is more concentrated in a few AI-linked tech companies than many people assume. When those companies swing, the whole index swings with them.",
+      "clientQuestions": [
+        {
+          "q": "Do you know how much of your \"diversified\" index fund is really in a handful of tech companies?",
+          "why": "This is called concentration risk. Many clients assume an index fund spreads their money evenly, but a big chunk of it rides on a few companies."
+        },
+        {
+          "q": "Is AI changing your industry or your business?",
+          "why": "For business owners and executives, AI can be a big opportunity or a threat to their income. That affects their financial plan and what they may need from the bank."
+        }
+      ],
+      "sources": []
+    }
+  ]
+}
