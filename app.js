@@ -302,8 +302,16 @@
 
     if (b.background) details.append(makeLesson("How we got here", b.background));
     if (b.who && b.who.length) details.append(makeList("Who's involved", b.who));
+    // Key people: each is { name, role, why }, shown as "Name (role): why they matter".
+    if (b.keyPeople && b.keyPeople.length) {
+      details.append(makeList("Key people", b.keyPeople.map(function (p) {
+        return p.name + " (" + p.role + "): " + p.why;
+      })));
+    }
     if (b.timeline && b.timeline.length) details.append(makeList("Timeline", b.timeline));
     if (b.now && b.now.length) details.append(makeList("What's happening now", b.now));
+    // What to watch: scheduled or publicly announced events, never predictions.
+    if (b.watch && b.watch.length) details.append(makeList("👀 What to watch next", b.watch));
     if (b.whyMarkets) details.append(makeLesson("Why markets care", b.whyMarkets));
 
     var links = (b.sources || []).filter(function (s) { return s.url && s.url.indexOf("https://") === 0; });
