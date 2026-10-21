@@ -1,4 +1,4 @@
-// briefings.js: news briefings for the Big themes cards, as of Oct 20, 2026.
+// briefings.js: news briefings for the Big themes cards, as of Oct 21, 2026.
 // Written to be neutral and factual: who's involved, how we got here, what's happening
 // now, and why markets care. Each fact comes from the sources listed with it.
 // Claims made by one side are labeled with who made them. News changes fast, so
@@ -8,7 +8,7 @@ window.BRIEFINGS = {
   energy: [
     {
       title: "Oil supply in 2026",
-      asOf: "Oct 20, 2026",
+      asOf: "Oct 21, 2026",
       background: "Two narrow sea routes carry a big share of the world's oil: the Strait of Hormuz (between Iran and Oman) and Bab al-Mandeb (at the southern end of the Red Sea, next to Yemen). The 2026 Iran war has disrupted both, which is the main reason oil prices have swung so hard this year (see the Geopolitical risk card).",
       who: [
         "Big producers: the U.S. (the world's largest crude oil producer), Saudi Arabia and Russia",
@@ -25,11 +25,11 @@ window.BRIEFINGS = {
       now: [
         "Oil flowing out of the Gulf has dropped sharply, but estimates differ. Al Jazeera reported 11.6 million barrels a day through the Strait of Hormuz in the week to Oct 13, about 68% of the 17.1 million before the war; OilPrice.com, citing newer data, reported about 8.5 million a day. Both figures come from data firm Kpler, over different time periods.",
         "Houthi attacks on Saudi energy infrastructure, and the Houthis taking control of the Bab al-Mandeb strait, have added to supply worries. On Oct 19 the Houthis claimed strikes on Saudi Aramco sites at Yanbu and the Shaybah oil field; that damage has not been independently confirmed.",
-        "Iran's Revolutionary Guard said a supertanker carrying more than 2 million barrels of crude hit a mine in the strait and caught fire on Oct 17. On Oct 20 it said its mines had stopped two more tankers using a route Iran calls illegal, and that both caught fire (Gulf News). These are Iran's claims.",
-        "Brent crude futures topped $110 a barrel on Oct 19, their highest in five months (OilPrice.com), and Gulf News reported Brent at $111.69 and U.S. crude (WTI) at $109.60 on Oct 20. The Brent price on this page is the physical \"spot\" price from FRED, which can run well above futures when supply is tight. Both are real; they measure different things."
+        "Iran's Revolutionary Guard said a supertanker carrying more than 2 million barrels of crude hit a mine in the strait and caught fire on Oct 17. On Oct 20 it said its mines had stopped three more tankers using a route Iran calls illegal: two caught fire and a third exploded south of the strait (CBS News; Gulf News). These are Iran's claims. Separately, the UK maritime monitor UKMTO reported tankers hit by \"unknown projectiles\" off Al Faw, Iraq, on Oct 20 and off Oman early on Oct 21, with crews reported safe (ABC News).",
+        "Brent crude futures touched $111.99 a barrel on Oct 20, the highest since May, then closed at $108.79 after unconfirmed reports that Qatar and Pakistan were working on a proposal to restart Iran talks. Early on Oct 21 Brent was back near $110 and U.S. crude (WTI) near $99 (Reuters, as cited by FinanceFeeds; OilPrice.com). The Brent price on this page is the physical \"spot\" price from FRED, which can run well above futures when supply is tight. Both are real; they measure different things.",
+        "Saudi Arabia postponed its big investment conference (the Future Investment Initiative, nicknamed \"Davos in the desert\"), planned for Oct 26–29 in Riyadh, to 2027. Organizers did not give the attacks as the reason, but news reports linked the delay to Houthi missile and drone strikes on Riyadh (The National; CBS News)."
       ],
       watch: [
-        "Oct 26–29: Saudi Arabia's big investment conference (the Future Investment Initiative, nicknamed \"Davos in the desert\") is planned in Riyadh; organizers said they were exploring letting people attend online (CBS News).",
         "Nov 1: the next monthly meeting of the seven OPEC+ countries that set output together, including Saudi Arabia and Russia (OPEC statement, Oct 4). On Oct 4 they kept November output targets unchanged.",
         "Nov 10: the U.S. Energy Information Administration (EIA) publishes its next monthly Short-Term Energy Outlook.",
         "Iran's foreign minister says the Strait of Hormuz would reopen on day six of Iran's seven-day plan if the U.S. lifts its blockade and meets Iran's other conditions."
@@ -38,6 +38,10 @@ window.BRIEFINGS = {
       sources: [
         { name: "Al Jazeera, Oct 17, 2026", url: "https://www.aljazeera.com/news/2026/10/17/us-and-iran-both-claim-control-of-strait-of-hormuz-amid-attacks-on-vessels" },
         { name: "OilPrice.com, Oct 19, 2026", url: "https://oilprice.com/Latest-Energy-News/World-News/Brent-Tops-110-as-Tanker-Attacks-Threaten-Persian-Gulf-Supply.html" },
+        { name: "FinanceFeeds (citing Reuters), Oct 21, 2026", url: "https://financefeeds.com/brent-crude-oil-price-110-iran-talks-rumours-five-month-high-bull-113-bear-105/" },
+        { name: "CBS News live updates, Oct 20, 2026", url: "https://www.cbsnews.com/live-updates/iran-war-us-trump-talks-russia-strait-of-hormuz/" },
+        { name: "ABC News live updates, Oct 21, 2026", url: "https://abcnews.com/International/live-updates/iran-live-updates/?id=137370653" },
+        { name: "The National, Oct 19, 2026 (conference postponed)", url: "https://www.thenationalnews.com/business/economy/2026/10/19/saudi-arabia-postpones-fii-investment-in-riyadh-after-houthi-attacks/" },
         { name: "CBS News live updates, Oct 18, 2026", url: "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-of-hormuz-yemen-houthis-saudi-arabia/" },
         { name: "TASS, Oct 19, 2026 (Houthi claims)", url: "https://tass.com/world/2204325" },
         { name: "Gulf News live updates, Oct 20, 2026", url: "https://gulfnews.com/world/mena/middle-east-war-houthi-missiles-kill-53-us-defence-chief-visits-region-1.500716634" },
@@ -51,7 +55,7 @@ window.BRIEFINGS = {
   geopolitics: [
     {
       title: "The 2026 Iran war",
-      asOf: "Oct 20, 2026",
+      asOf: "Oct 21, 2026",
       background: "Tensions between Iran and Israel and the U.S. built for years, including a 12-day war between Israel and Iran in June 2025. On Feb 28, 2026, the U.S. and Israel launched large-scale air strikes on Iran that killed Supreme Leader Ali Khamenei and other officials. U.S. and Israeli officials described the strikes as stopping threats from Iran's nuclear and missile programs; critics say the attack violated international law.",
       who: [
         "The United States and Israel",
@@ -80,26 +84,29 @@ window.BRIEFINGS = {
         "The U.S. and Iran both claim control of the Strait of Hormuz. The U.S. says its naval blockade of Iran's southern ports continues.",
         "A UK maritime monitor (UKMTO) said 23 ship attacks had been recorded in October as of Oct 18, almost double the usual rate, with at least 10 in the week to Oct 16 (CBS News; Al Jazeera reported at least 12 that week). Iran and the U.S. give conflicting accounts of some attacks.",
         "On Oct 18, Iran's foreign minister, Abbas Araghchi, said Iran's conditions still stand: if the U.S. lifts its blockade (and meets its other demands, including lifting oil sanctions), the strait would reopen on day six and talks would start on day seven. He said Iran is still reviewing U.S. comments on the plan.",
-        "President Trump has said the U.S. will not attack Iran before the U.S. midterm elections and described \"productive conversations\" with Iran. Mediators including Pakistan and Qatar are relaying messages, but no breakthrough has been reported. Gulf News reported that when Pakistan's army chief met Iranian leaders around Oct 20, they said talks would not begin until Iran's conditions are met.",
+        "President Trump has said the U.S. will not attack Iran before the U.S. midterm elections and described \"productive conversations\" with Iran. Mediators including Pakistan, Qatar and Oman are relaying messages, but no breakthrough has been reported. On Oct 20, Iran's President Masoud Pezeshkian told visiting Pakistani army chief Asim Munir there would be no return to talks until the U.S. halts its pressure, threats and sanctions (CBS News; Gulf News). On Oct 21, U.S. Secretary of State Marco Rubio said the U.S. \"will not support any deal that creates a pathway for Iran to ever have a nuclear weapon,\" and that countries such as Qatar are still acting as go-betweens (ABC News). One Arab outlet, Al-Araby Al-Jadeed, reported a new Qatar-Pakistan compromise proposal; that report has not been confirmed by any government.",
         "Fighting linked to the war keeps spreading in Yemen. On Oct 19, Houthi missiles hit a Yemeni government training camp in Shabwah province; the Yemeni government reported 73 killed, mostly new recruits (earlier counts were 53 and 58). The Houthis said they targeted a Saudi-led coalition site. The UK said its fighter jets will fly defensive missions over Saudi cities (Gulf News)."
       ],
       watch: [
         "Nov 3: U.S. midterm elections. President Trump has said the U.S. will not attack Iran before then.",
         "Late November: the USS Theodore Roosevelt carrier group and about 10,000 U.S. personnel are expected in the region, according to two U.S. officials cited by Fox News (as reported by Gulf News).",
-        "Iran's foreign minister says the strait would reopen on day six of Iran's seven-day plan, with talks on day seven, if the U.S. lifts its blockade and meets Iran's other conditions. Iran says it is still reviewing U.S. comments on the plan."
+        "Iran's foreign minister says the strait would reopen on day six of Iran's seven-day plan, with talks on day seven, if the U.S. lifts its blockade and meets Iran's other conditions. Iran says it is still reviewing U.S. comments on the plan.",
+        "Iran's UN ambassador has asked the UN Secretary-General to call an emergency Security Council meeting about U.S. threats against Iran; no date has been set (CBS News)."
       ],
       whyMarkets: "This is the biggest driver of this year's oil swings. The oil chart lines up with the timeline: the March jump, the April peak just before the ceasefire, the drop after the June agreement, and the climbs after July and September.",
       sources: [
         { name: "Al Jazeera, Oct 17, 2026", url: "https://www.aljazeera.com/news/2026/10/17/us-and-iran-both-claim-control-of-strait-of-hormuz-amid-attacks-on-vessels" },
         { name: "CBS News live updates, Oct 18, 2026", url: "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-of-hormuz-yemen-houthis-saudi-arabia/" },
         { name: "Gulf News live updates, Oct 20, 2026", url: "https://gulfnews.com/world/mena/middle-east-war-houthi-missiles-kill-53-us-defence-chief-visits-region-1.500716634" },
+        { name: "CBS News live updates, Oct 20, 2026", url: "https://www.cbsnews.com/live-updates/iran-war-us-trump-talks-russia-strait-of-hormuz/" },
+        { name: "ABC News live updates, Oct 21, 2026", url: "https://abcnews.com/International/live-updates/iran-live-updates/?id=137370653" },
         { name: "Wikipedia: 2026 Shabwah missile attack", url: "https://en.wikipedia.org/wiki/2026_Shabwah_missile_attack" },
         { name: "Wikipedia: 2026 Iran war", url: "https://en.wikipedia.org/wiki/2026_Iran_war" }
       ]
     },
     {
       title: "Israel and Gaza",
-      asOf: "Oct 20, 2026",
+      asOf: "Oct 21, 2026",
       background: "On Oct 7, 2023, Hamas-led militants attacked Israel, killing about 1,200 people and taking about 250 hostages. Israel then launched a military campaign in Gaza. A ceasefire between Israel and Hamas, part of a U.S.-backed peace plan, took effect in October 2025. Its first phase brought the release of all hostages and set up a \"Board of Peace\" to oversee Gaza's transition. The next phases (Hamas giving up its weapons, a full Israeli pullout and an international security force) have not happened yet.",
       who: [
         "Israel",
@@ -118,7 +125,7 @@ window.BRIEFINGS = {
       now: [
         "The ceasefire is a year old but strained: the UN reports deadly Israeli strikes continue, and UNICEF says more than 340 children have been killed since it was announced. On Oct 9, more than 100 aid and human rights groups, including Amnesty International, Oxfam and Save the Children, said in a joint statement that the ceasefire \"exists in name only.\"",
         "The World Food Programme says funding shortages forced it to cut food aid by about a third, affecting some 500,000 people as winter approaches. Many families are living in tents or damaged buildings.",
-        "Gaza's Health Ministry, which operates under Hamas, reports at least 74,480 Palestinians killed since October 2023, including 1,522 since the ceasefire took effect (as reported by Al Jazeera on Oct 20).",
+        "Gaza's Health Ministry, which operates under Hamas, reports at least 74,480 Palestinians killed since October 2023, including 1,522 since the ceasefire took effect (as reported by Al Jazeera on Oct 20). On Oct 21 the ministry put the post-ceasefire figure at 1,534 and warned that hospital generators had run out of fuel, which it blamed on Israeli limits on fuel entering Gaza (Egyptian Gazette).",
         "Hamas accepted a 15-point roadmap for giving up its weapons in stages on July 31. Israel did not sign it; Netanyahu reportedly rejected it on Aug 9, and Israel says it will not withdraw until Hamas is fully disarmed. Hamas says it will not act unless Israel meets its withdrawal obligations (Security Council Report; Al Jazeera).",
         "In the West Bank, UN experts have warned of rising settler violence against Palestinian farmers during the olive harvest."
       ],
@@ -130,6 +137,7 @@ window.BRIEFINGS = {
       whyMarkets: "On its own, the conflict has moved global markets less than the Iran war, because it doesn't directly affect oil supply. It matters to markets mainly through the risk of wider regional conflict, which is part of how the Iran war developed.",
       sources: [
         { name: "Al Jazeera, Oct 20, 2026 (casualty figures)", url: "https://www.aljazeera.com/news/2026/10/20/israeli-forces-kill-at-least-four-palestinians-in-gaza-strikes" },
+        { name: "Egyptian Gazette, Oct 21, 2026 (Health Ministry figures)", url: "https://egyptian-gazette.com/world/gaza-death-toll-since-ceasefire-rises-to-1534" },
         { name: "Al Jazeera, Oct 9, 2026 (aid groups' statement)", url: "https://www.aljazeera.com/news/2026/10/9/gaza-ceasefire-exists-in-name-only-more-than-100-ngos-say" },
         { name: "Al Jazeera: Israel's elections explained, Oct 20, 2026", url: "https://www.aljazeera.com/news/2026/10/20/israels-elections-2026-explained-in-maps-and-charts" },
         { name: "Al Jazeera, Jul 31, 2026 (Hamas roadmap)", url: "https://www.aljazeera.com/news/2026/7/31/gaza-board-of-peace-announces-hamas-disarmament-agreement-what-we-know" },
@@ -144,7 +152,7 @@ window.BRIEFINGS = {
   ai: [
     {
       title: "The AI spending boom",
-      asOf: "Oct 20, 2026",
+      asOf: "Oct 21, 2026",
       background: "Since ChatGPT launched in late 2022, big tech companies have raced to build AI, spending enormous sums on chips and data centers. That has made a few companies, especially chipmaker Nvidia, some of the most valuable in the world, and a big part of the S&P 500.",
       who: [
         "Chipmakers that make AI hardware, like Nvidia, Broadcom and AMD",
@@ -165,6 +173,7 @@ window.BRIEFINGS = {
         "The big question in markets has shifted from \"how much will companies spend?\" to \"will that spending pay off?\" Higher interest rates (see the Fed tile) make expensive data center projects harder to fund."
       ],
       watch: [
+        "Oct 21, after U.S. markets close: Meta (Facebook's parent) reports its July–September results (company announcement).",
         "Oct 27–28: the Fed's next interest-rate meeting, with the decision on Oct 28.",
         "Oct 28: Alphabet (Google) reports its July–September results (company announcement). Investors will be looking at how much it plans to spend on AI.",
         "Oct 29: Amazon reports its July–September results (company announcement).",
@@ -178,6 +187,7 @@ window.BRIEFINGS = {
         { name: "Yahoo Finance, Oct 14, 2026", url: "https://finance.yahoo.com/technology/ai/articles/nvidia-broadcom-marvell-stocks-fall-191611708.html" },
         { name: "Federal Reserve Board members", url: "https://www.federalreserve.gov/aboutthefed/bios/board/default.htm" },
         { name: "Alphabet investor relations: Q3 2026 call date", url: "https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Date-of-Third-Quarter-2026-Financial-Results-Conference-Call-2026-8tpGZsLS6v/default.aspx" },
+        { name: "Meta investor relations: Q3 2026 results date", url: "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-to-Announce-Third-Quarter-2026-Results/default.aspx" },
         { name: "Amazon: Q3 2026 earnings date", url: "https://www.aboutamazon.com/news/company-news/amazon-earnings-q3-2026-report" }
       ]
     }
