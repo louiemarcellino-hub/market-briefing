@@ -1,19 +1,49 @@
 // quiz.js: the "Test yourself" quiz. One question at a time:
 // pick an answer → see if you were right and why → next question → score at the end.
+// Each round picks 10 random questions from the full bank and shuffles the answer
+// choices, so you're learning the ideas, not memorizing "the answer is B".
 // Nothing is saved; each round starts fresh.
 
 (function () {
-  var questions = window.QUIZ_QUESTIONS;
+  var bank = window.QUIZ_QUESTIONS;
   var box = document.getElementById("quiz");
   if (!box) return;
-  if (!Array.isArray(questions) || !questions.length) {
+  if (!Array.isArray(bank) || !bank.length) {
     box.textContent = "Couldn't load the quiz questions.";
     return;
   }
 
+  var ROUND_SIZE = Math.min(10, bank.length);
+  var questions = []; // this round's questions
   var index = 0;
   var score = 0;
   var letters = ["A", "B", "C", "D"];
+
+  // Shuffle a copy of a list (the Fisher–Yates method: fair, every order equally likely).
+  function shuffled(list) {
+    var copy = list.slice();
+    for (var i = copy.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = copy[i]; copy[i] = copy[j]; copy[j] = tmp;
+    }
+    return copy;
+  }
+
+  // Build a new round: 10 random questions, each with its choices shuffled.
+  // We track where the right answer ends up after shuffling.
+  function newRound() {
+    questions = shuffled(bank).slice(0, ROUND_SIZE).map(function (item) {
+      var order = shuffled(item.choices.map(function (_, i) { return i; }));
+      return {
+        q: item.q,
+        why: item.why,
+        choices: order.map(function (i) { return item.choices[i]; }),
+        answer: order.indexOf(item.answer)
+      };
+    });
+    index = 0;
+    score = 0;
+  }
 
   function make(tag, className, text) {
     var node = document.createElement(tag);
@@ -78,11 +108,10 @@
       : pct >= 0.5 ? "Good start. Open the tiles' lessons for the ones you missed, then try again."
       : "Everyone starts somewhere. Read through the tiles' lessons, then give it another shot.";
 
-    var again = make("button", "quiz-next", "Try again ↻");
+    var again = make("button", "quiz-next", "New round ↻");
     again.type = "button";
     again.addEventListener("click", function () {
-      index = 0;
-      score = 0;
+      newRound();
       showQuestion();
     });
 
@@ -90,9 +119,11 @@
       make("p", "quiz-progress", "Done!"),
       make("p", "quiz-score", score + " / " + questions.length),
       make("p", "quiz-why", message),
+      make("p", "quiz-why", "Each new round picks " + ROUND_SIZE + " random questions from a bank of " + bank.length + ", with the answers in a new order."),
       again
     );
   }
 
+  newRound();
   showQuestion();
 })();
