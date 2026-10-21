@@ -2,9 +2,9 @@
 // runs them through Louie's wording rules (rules.mjs), and rewrites the page's
 // data files in public-data/. Run it with:  node scripts/update-data.mjs
 //
-// Sources: FRED (Federal Reserve Bank of St. Louis) download links, which its
-// robots.txt allows for programs going slowly (1+ second apart), and the BLS
-// public API (no key needed for a couple of requests a day).
+// Sources: FRED (Federal Reserve Bank of St. Louis) through its official API
+// (free key, stored as a GitHub secret), and the BLS public API (no key needed
+// for a couple of requests a day).
 // If anything looks wrong, it stops WITHOUT writing, so the site keeps
 // yesterday's numbers instead of showing broken ones.
 
@@ -27,22 +27,39 @@ const niceDate = (iso) => { const d = new Date(toTime(iso)); return `${MONTHS[d.
 const money = (x) => "$" + x.toFixed(2);
 const round = (x, n) => Number(x.toFixed(n));
 
-async function download(url) {
+// `label` is what error messages show instead of the address, so a secret key
+// that's part of an address never ends up in the (public) robot logs.
+async function download(url, label = url) {
   const res = await fetch(url, { headers: { "User-Agent": USER_AGENT }, signal: AbortSignal.timeout(20000) });
-  if (!res.ok) throw new Error(`Download failed (HTTP ${res.status}): ${url}`);
+  if (!res.ok) throw new Error(`Download failed (HTTP ${res.status}): ${label}`);
   return res.text();
 }
+
+// FRED's official API needs a free key. On GitHub it comes from a secret called
+// FRED_API_KEY (Settings → Secrets and variables → Actions). It is never typed into this file.
+const FRED_KEY = process.env.FRED_API_KEY || "";
 
 // FRED series as [{ date, v }], oldest first, skipping blank days (holidays).
 async function fred(id, days = 420) {
   const start = isoDate(Date.now() - days * DAY);
-  const text = await download(`https://fred.stlouisfed.org/graph/fredgraph.csv?id=${id}&cosd=${start}`);
-  await sleep(1500); // be polite: FRED asks programs to wait at least 1 second
-  const rows = text.trim().split("\n").slice(1)
-    .map((line) => line.split(","))
-    .filter(([d, v]) => /^\d{4}-\d{2}-\d{2}$/.test(d) && v !== "" && v !== "." && Number.isFinite(Number(v)))
-    .map(([date, v]) => ({ date, v: Number(v) }));
-  if (rows.length < 20) throw new Error(`FRED ${id}: only ${rows.length} rows came back`);
+  let rows;
+  if (FRED_KEY) {
+    // The official way for programs: FRED's API.
+    const url = `https://api.stlouisfed.org/fred/series/observations?series_id=${id}&observation_start=${start}&file_type=json&api_key=${encodeURIComponent(FRED_KEY)}`;
+    const json = JSON.parse(await download(url, `FRED API series ${id}`));
+    rows = (json.observations || [])
+      .filter((o) => /^\d{4}-\d{2}-\d{2}$/.test(o.date) && o.value !== "." && Number.isFinite(Number(o.value)))
+      .map((o) => ({ date: o.date, v: Number(o.value) }));
+  } else {
+    // No key: try the public download link (FRED may block this for programs).
+    const text = await download(`https://fred.stlouisfed.org/graph/fredgraph.csv?id=${id}&cosd=${start}`);
+    rows = text.trim().split("\n").slice(1)
+      .map((line) => line.split(","))
+      .filter(([d, v]) => /^\d{4}-\d{2}-\d{2}$/.test(d) && v !== "" && v !== "." && Number.isFinite(Number(v)))
+      .map(([date, v]) => ({ date, v: Number(v) }));
+  }
+  await sleep(1500); // be polite: wait between requests
+  if (rows.length < 20) throw new Error(`FRED ${id}: only ${rows.length} rows came back${FRED_KEY ? "" : " (no API key set; FRED may be blocking the download link)"}`);
   return rows;
 }
 
