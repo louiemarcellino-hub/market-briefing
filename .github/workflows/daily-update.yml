@@ -32,8 +32,12 @@ jobs:
         with:
           node-version: 22
 
+      # If downloading fails, the site still publishes with the last saved numbers
+      # (the "Updated" date on the page stays honest), and this step shows a warning.
       - name: Download fresh numbers and apply the wording rules
-        run: node scripts/update-data.mjs
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: node scripts/update-data.mjs || echo "::warning::Data update failed, so the site was published with the last saved numbers. Open this step to see why."
 
       - name: Gather the website files
         run: |
