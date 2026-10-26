@@ -462,6 +462,20 @@ body[data-level="advanced"] .lvl-advanced {
   margin: 8px 0 0;
 }
 
+/* Latest market (futures) price, under the official weekly numbers */
+.theme-market {
+  font-size: 0.85rem;
+  margin: 8px 0 0;
+  padding: 8px 10px;
+  border-left: 3px solid var(--highlight);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+}
+
+.theme-market a {
+  color: var(--highlight);
+}
+
 /* --- Oil price chart --- */
 
 .theme-chart {

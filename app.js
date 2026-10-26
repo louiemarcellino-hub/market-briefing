@@ -214,6 +214,30 @@
         }
       }
 
+      // Optional "latest market price" line (from briefings.js, reviewed with the news).
+      var firstBriefing = ((window.BRIEFINGS || {})[theme.id] || [])[0];
+      var mp = firstBriefing && firstBriefing.marketPrice;
+      if (mp) {
+        var market = document.createElement("p");
+        market.className = "theme-market";
+        var strong = document.createElement("strong");
+        strong.textContent = "Latest market price: ";
+        market.append(
+          strong,
+          "Brent " + mp.brent + " · WTI " + mp.wti + " a barrel (futures, closing price " + mp.date + "). "
+        );
+        if (mp.sourceUrl && mp.sourceUrl.indexOf("https://") === 0) {
+          var link = document.createElement("a");
+          link.href = mp.sourceUrl;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.textContent = mp.sourceName + " ↗";
+          market.append("Source: ", link, ". ");
+        }
+        market.append("Updated Mon/Wed/Fri with the news briefing.");
+        card.append(market);
+      }
+
       // Optional chart spot. chart.js draws into it (only the Energy card has one).
       if (theme.chart) {
         var chartSpot = document.createElement("div");
