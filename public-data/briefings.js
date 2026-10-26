@@ -9,6 +9,15 @@ window.BRIEFINGS = {
     {
       title: "Oil supply in 2026",
       asOf: "Oct 26, 2026",
+      // Latest market (futures) closing prices, shown under the official numbers on the
+      // Energy card. Updated with the news drafts (Mon/Wed/Fri) and reviewed by Louie.
+      marketPrice: {
+        brent: "$116.72",
+        wti: "$103.27",
+        date: "Oct 23, 2026",
+        sourceName: "Reuters, via Yahoo Finance",
+        sourceUrl: "https://finance.yahoo.com/markets/articles/tech-selloff-relents-oil-five-103308077.html"
+      },
       background: "Two narrow sea routes carry a big share of the world's oil: the Strait of Hormuz (between Iran and Oman) and Bab al-Mandeb (at the southern end of the Red Sea, next to Yemen). The 2026 Iran war has disrupted both, which is the main reason oil prices have swung so hard this year (see the Geopolitical risk card).",
       who: [
         "Big producers: the U.S. (the world's largest crude oil producer), Saudi Arabia and Russia",
