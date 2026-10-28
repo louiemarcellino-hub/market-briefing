@@ -2,12 +2,12 @@
 // (lessons and questions) or scripts/rules.mjs (wording rules) instead.
 window.MARKET_DATA = {
   "label": "REAL",
-  "asOf": "Updated Oct 21, 2026",
+  "asOf": "Updated Oct 28, 2026",
   "indicators": [
     {
       "id": "sp500",
       "name": "S&P 500",
-      "source": "FRED (S&P Dow Jones Indices), close on Oct 20, 2026",
+      "source": "FRED (S&P Dow Jones Indices), close on Oct 27, 2026",
       "updates": "Daily number · changes every trading day",
       "whatItIs": "A single number that tracks the stock prices of 500 of the largest U.S. companies, like Apple, Microsoft and JPMorgan. When people say \"the market was up today,\" they usually mean this.",
       "whatItIsIntermediate": "It's weighted by company size (market cap), so bigger companies count for more: a 1% move in Apple moves the index far more than a 1% move in a smaller member. A committee at S&P Dow Jones Indices picks the companies based on size, profits and how much their shares trade.",
@@ -22,15 +22,15 @@ window.MARKET_DATA = {
           "why": "That mix is called asset allocation, and it does more than anything else to decide how bumpy a portfolio feels. Someone retiring in 3 years usually needs a different mix than someone investing for 30."
         }
       ],
-      "value": "7,712.57",
-      "change": "-1.2% vs. a week earlier",
-      "direction": "down",
-      "rightNow": "Stocks slipped 1.2% this week, a normal wobble. For a client with 60% of their money in stocks, that's roughly a 0.7% dip in the whole portfolio."
+      "value": "7,722.60",
+      "change": "+0.1% vs. a week earlier",
+      "direction": "up",
+      "rightNow": "Stocks barely moved this week (+0.1%). For a client with 60% of their money in stocks, that's roughly a 0.1% gain in the whole portfolio."
     },
     {
       "id": "treasury10",
       "name": "10-Year Treasury Yield",
-      "source": "FRED (U.S. Treasury), Oct 19, 2026",
+      "source": "FRED (U.S. Treasury), Oct 26, 2026",
       "updates": "Daily number · posted with a short delay",
       "whatItIs": "The interest rate the U.S. government pays when it borrows money for 10 years. Investors treat it as the baseline \"safe\" return.",
       "whatItIsIntermediate": "Bond prices and yields move in opposite directions: when buyers pay more for existing bonds, the yield falls. The yield reflects what investors expect inflation and Fed rates to be over the next 10 years, plus a little extra for tying money up that long.",
@@ -45,15 +45,15 @@ window.MARKET_DATA = {
           "why": "Mortgages are one of the biggest things a private bank lends for. When yields are high, the timing and type of loan (fixed or adjustable) matter a lot to a client's monthly budget."
         }
       ],
-      "value": "5.15%",
-      "change": "-0.09 pts vs. a week earlier",
+      "value": "5.00%",
+      "change": "-0.15 pts vs. a week earlier",
       "direction": "down",
-      "rightNow": "The 10-year yield is about 5.15%. Yields were fairly steady this week, so bond values didn't move much. Mortgage rates tend to follow this yield."
+      "rightNow": "The 10-year yield is about 5.00%. Yields fell sharply this week, which lifts the value of bonds clients already own and can bring mortgage rates down. Mortgage rates tend to follow this yield."
     },
     {
       "id": "fedfunds",
       "name": "Fed Funds Rate",
-      "source": "FRED (Federal Reserve target range), Oct 21, 2026",
+      "source": "FRED (Federal Reserve target range), Oct 28, 2026",
       "updates": "Changes only at scheduled Fed meetings (about 8 a year)",
       "whatItIs": "The interest rate banks charge each other for overnight loans. The Federal Reserve sets a target range for it, about eight times a year, to cool down or speed up the economy.",
       "whatItIsIntermediate": "The Fed doesn't simply announce the rate. It sets a target range, then steers the real rate into it, mainly by setting the interest it pays banks on money they keep at the Fed. Decisions are made by a committee called the FOMC, which meets eight times a year.",
@@ -156,7 +156,7 @@ window.MARKET_DATA = {
       "title": "Energy prices",
       "chart": "energy",
       "howItWorks": "Oil is priced globally, so trouble anywhere in a major producing region can push prices up everywhere. Energy is part of the Consumer Price Index, so higher gas prices feed straight into inflation, and they also raise costs for airlines, shipping and manufacturers.",
-      "rightNow": "Brent oil is $126.55 a barrel, up 101% from a year ago. Over the past year it ranged from $59.93 (Dec 16, 2025) to $138.21 (Apr 7, 2026). Big, fast jumps like these usually come from supply worries, such as conflict in oil-producing regions; the briefing below covers what's driving them now.",
+      "rightNow": "Brent oil is $115.22 a barrel, up 90% from a year ago. Over the past year it ranged from $59.93 (Dec 16, 2025) to $138.21 (Apr 7, 2026). Big, fast jumps like these usually come from supply worries, such as conflict in oil-producing regions; the briefing below covers what's driving them now.",
       "clientQuestions": [
         {
           "q": "How are higher energy costs hitting your household budget or your business?",
@@ -184,21 +184,21 @@ window.MARKET_DATA = {
       "stats": [
         {
           "label": "Brent crude (global oil)",
-          "value": "$126.55",
-          "note": "a barrel · up 101% from a year ago ($63.00)"
+          "value": "$115.22",
+          "note": "a barrel · up 90% from a year ago ($60.71)"
         },
         {
           "label": "WTI crude (U.S. oil)",
-          "value": "$101.91",
-          "note": "a barrel · up 71% from a year ago ($59.52)"
+          "value": "$107.89",
+          "note": "a barrel · up 85% from a year ago ($58.34)"
         },
         {
           "label": "U.S. regular gasoline",
-          "value": "$4.28",
-          "note": "a gallon · up 42% from a year ago ($3.02)"
+          "value": "$4.27",
+          "note": "a gallon · up 41% from a year ago ($3.04)"
         }
       ],
-      "statsAsOf": "Oil: Oct 14, 2026 · Gasoline: week of Oct 19, 2026"
+      "statsAsOf": "Oil: Oct 20, 2026 · Gasoline: week of Oct 26, 2026. Official weekly data (U.S. Energy Information Administration, via FRED), published about a week after the fact."
     },
     {
       "id": "geopolitics",
