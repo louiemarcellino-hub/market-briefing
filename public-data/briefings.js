@@ -1,4 +1,4 @@
-// briefings.js: news briefings for the Big themes cards, as of Oct 28, 2026.
+// briefings.js: news briefings for the Big themes cards, as of Nov 2, 2026.
 // Written to be neutral and factual: who's involved, how we got here, what's happening
 // now, and why markets care. Each fact comes from the sources listed with it.
 // Claims made by one side are labeled with who made them. News changes fast, so
@@ -8,15 +8,15 @@ window.BRIEFINGS = {
   energy: [
     {
       title: "Oil supply in 2026",
-      asOf: "Oct 28, 2026",
+      asOf: "Nov 2, 2026",
       // Latest market (futures) closing prices, shown under the official numbers on the
       // Energy card. Updated with the news drafts (Mon/Wed/Fri) and reviewed by Louie.
       marketPrice: {
-        brent: "$113.88",
-        wti: "$99.90",
-        date: "Oct 27, 2026",
-        sourceName: "Reuters, via Investing.com",
-        sourceUrl: "https://www.investing.com/news/economy-news/stocks-rise-ahead-of-tech-earnings-fed-decision-4979156"
+        brent: "$113.43",
+        wti: "$104.12",
+        date: "Oct 30, 2026",
+        sourceName: "Reuters, via CNBC",
+        sourceUrl: "https://www.cnbc.com/2026/10/30/oil-rises-on-supply-concerns-as-houthis-attack-saudi-arabia.html"
       },
       background: "Two narrow sea routes carry a big share of the world's oil: the Strait of Hormuz (between Iran and Oman) and Bab al-Mandeb (at the southern end of the Red Sea, next to Yemen). The 2026 Iran war has disrupted both, which is the main reason oil prices have swung so hard this year (see the Geopolitical risk card).",
       who: [
@@ -33,35 +33,32 @@ window.BRIEFINGS = {
         { name: "Amin Nasser", role: "President and CEO of Saudi Aramco", why: "Runs Saudi Arabia's state oil company, including the East-West pipeline that lets Saudi oil avoid the Strait of Hormuz." }
       ],
       now: [
-        "How much Gulf oil is getting out depends on what you count. Using data from ship-tracking firm Kpler, Yahoo Finance (citing The Wall Street Journal) reported that in the week to Oct 18, about 14 million barrels a day passed through the Strait of Hormuz itself (roughly 82% of pre-war levels), but that total Middle East flows, including pipelines that go around the strait, were above 24 million a day, slightly more than before the war. Earlier Kpler-based estimates for parts of October were lower (Al Jazeera; OilPrice.com). Aramco's CEO said its East-West pipeline (which carries oil across Saudi Arabia to the Red Sea) now moves 7 million barrels a day, up from 2 million (AP; CBS News).",
-        "Even with oil moving, shipping it has become very expensive and risky: Yahoo Finance reported a supertanker from the U.S. Gulf Coast to China was chartered for about $76 million, roughly 10 times the cost a year earlier, and Bloomberg said shipping costs remain high.",
-        "Houthi attacks on Saudi Arabia continue. On Oct 27 the Houthis said they hit the Ras Tanura refinery (near Saudi Arabia's biggest oil export terminal) with a ballistic missile; maritime security firm Vanguard reported a fire in the area that was contained, and the damage to oil operations is unclear. The Saudi-led coalition said it intercepted three missiles aimed at the Eastern Province and two aimed at Riyadh (Gulf News; Bloomberg, via Rigzone). On Oct 26, Egypt's parliament approved military support for Saudi Arabia against Houthi attacks (AP, via PBS).",
-        "Brent crude futures fell 1.7% on Oct 27 to settle at $113.88 a barrel, and U.S. crude (WTI) fell 1.8% to $99.90 (Reuters, via Investing.com; Bloomberg). Reports linked the drop to the Oct 26 talks in Tehran between Iran, Saudi Arabia, Pakistan and Turkey, while ongoing Houthi attacks kept prices near six-month highs. On Oct 23, Brent had closed at $116.72, its highest close since April 29 (Reuters). The Brent price on this page's tile is the physical \"spot\" price from FRED, which can run well above futures when supply is tight. Both are real; they measure different things."
+        "Oil prices rose for a fourth month in a row. On Friday, Oct 30, U.S. crude (WTI) futures settled at $104.12 a barrel, and the January Brent contract (now the main one traded) settled at $113.43. The December Brent contract, which expired that day, settled at $117.64. In October, Brent rose 13.6% and WTI 15.2% (Reuters, via CNBC). On Monday, Nov 2, prices fell about 4% during trading as Iran-Qatar talks continued (Gulf News). The Brent price on this page's tile is the physical \"spot\" price from FRED, which can run well above futures when supply is tight. Both are real; they measure different things.",
+        "October had the most attacks on ships since the war began. The UK's maritime security agency (UKMTO) counted more than 30 incidents in and near the Strait of Hormuz, more than double September (The National); the UN's shipping agency (IMO) counted at least 30 ships hit as of Oct 27 (CNBC). On Oct 29, UKMTO said a small boat attached explosives to a tanker's hull (Reuters, via CNBC). On Nov 1, a Qatari gas tanker was attacked, and on Nov 2 Iran's Revolutionary Guard said two tankers hit mines on what it called an \"unauthorised route\" (Gulf News). U.S. Central Command (CENTCOM) says the main routes have been cleared of mines; Iran disputes this (CBS News).",
+        "How much oil gets out keeps changing. Ship-tracking firm Kpler's data shows crude flows through the strait averaged nearly 11.1 million barrels a day in October, only about 2% below September, but fell to 7.3 million in the week ended Oct 28, more than 40% below pre-war levels (CNBC). Aramco's CEO said its East-West pipeline (which carries oil across Saudi Arabia to the Red Sea, avoiding the strait) moves 7 million barrels a day (AP; CBS News). Shipping is still very expensive and risky (Yahoo Finance).",
+        "Houthi attacks on Saudi Arabia continue. The Houthis said they attacked the Ras Tanura and Rabigh refineries and an Aramco production site at Abqaiq; the damage has not been confirmed, and Saudi crude exports rose in October from September (Reuters, via CNBC). The U.S. ordered non-emergency government staff to leave Saudi Arabia (Reuters, via CNBC). On Nov 2, the Saudi-led coalition said it intercepted a Houthi missile, and the Houthis said Saudi strikes hit a port and an oil facility in Yemen (Gulf News).",
+        "On Nov 1, the seven core OPEC+ countries (Saudi Arabia, Russia, Iraq, Kuwait, Algeria, Kazakhstan and Oman) kept their December production targets unchanged, the third month in a row with no change. Reports say most members are producing below their targets because of the Hormuz disruption (Reuters, via The Tribune; InvestingLive)."
       ],
       watch: [
-        "Nov 1: the next monthly meeting of the seven OPEC+ countries that set output together, including Saudi Arabia and Russia (OPEC statement, Oct 4). On Oct 4 they kept November output targets unchanged.",
         "Nov 10: the U.S. Energy Information Administration (EIA) publishes its next monthly Short-Term Energy Outlook.",
-        "Iran's foreign minister says the Strait of Hormuz would reopen on day six of Iran's seven-day plan if the U.S. lifts its blockade and meets Iran's other conditions. According to The National, citing unnamed sources, Iran asked the Saudi, Pakistani and Turkish delegations on Oct 26 to urge Washington to accept a two-week regional pause, in return for gradually reopening the strait."
+        "Nov 29: the full OPEC+ group (all member countries) is due to meet, where analysts expect it to set production quotas for 2027 (InvestingLive).",
+        "Iran's foreign minister said on Nov 1 that Iran has agreed with mediators to shorten its plan to two days: the U.S. would take certain steps on day one and the Strait of Hormuz would reopen on day two. He said \"we have not yet reached a final outcome\" and that it depends on the U.S. answers (TASS; Gulf News). Iran's Foreign Ministry spokesperson said the strait will not reopen until the U.S. naval blockade ends and Iran's demands are met (Gulf News). The U.S. has not publicly accepted the plan."
       ],
-      whyMarkets: "Energy feeds directly into inflation (gasoline is part of the CPI), raises costs for airlines, shipping and manufacturers, and helps explain why the Fed raised rates in September.",
+      whyMarkets: "Energy feeds directly into inflation (gasoline is part of the CPI), raises costs for airlines, shipping and manufacturers, and helps explain why the Fed raised rates in September. At its Oct 28 meeting the Fed held rates steady, but two officials voted for another increase (Yahoo Finance).",
       sources: [
-        { name: "Investing.com (Reuters), Oct 27, 2026 (oil settle prices)", url: "https://www.investing.com/news/economy-news/stocks-rise-ahead-of-tech-earnings-fed-decision-4979156" },
-        { name: "Rigzone (Bloomberg), Oct 27, 2026", url: "https://www.rigzone.com/news/wire/oil_slips_as_iran_diplomacy_picks_up-27-oct-2026-184947-article/" },
-        { name: "Gulf News, Oct 27, 2026 (Ras Tanura, Tehran talks)", url: "https://gulfnews.com/world/gulf/saudi/tehran-talks-falter-as-houthis-escalate-attacks-on-saudi-arabia-turkey-advances-defence-pact-2-1.500725947" },
-        { name: "The National, Oct 27, 2026 (inside the Tehran talks)", url: "https://thenationalnews.com/news/gulf/2026/10/27/exclusive-iran-saudi-arabia-inside-tehran-talks" },
+        { name: "CNBC (Reuters), Oct 30, 2026 (oil settle prices, Houthi claims)", url: "https://www.cnbc.com/2026/10/30/oil-rises-on-supply-concerns-as-houthis-attack-saudi-arabia.html" },
+        { name: "CNBC, Oct 30, 2026 (tanker attacks and Kpler flows)", url: "https://www.cnbc.com/amp/2026/10/30/tanker-attack-strait-hormuz-iran-war-oil.html" },
+        { name: "The National, Oct 31, 2026 (Hormuz attacks in October)", url: "https://www.thenationalnews.com/news/mena/2026/10/31/attacks-on-ships-transiting-hormuz-in-october-highest-since-start-of-war/" },
+        { name: "Gulf News live updates, Nov 2, 2026", url: "https://gulfnews.com/world/americas/middle-east-conflict-trump-threatens-iran-with-military-action-as-tehran-warns-new-war-could-last-longer-1.500732180" },
+        { name: "Gulf News, Nov 2, 2026 (Iran's two-day plan)", url: "https://gulfnews.com/world/mena/iran-proposes-2-day-plan-to-reopen-strait-of-hormuz-amid-us-talks-1.500732117" },
+        { name: "TASS, Nov 1, 2026 (Araghchi on the Doha talks)", url: "https://tass.com/world/2211541" },
+        { name: "The Tribune (ANI, Reuters), Nov 1, 2026 (OPEC+ December targets)", url: "https://www.tribuneindia.com/news/business/opec-set-to-keep-december-oil-output-targets-unchanged-focus-shifts-to-2027-quotas/" },
+        { name: "InvestingLive, Nov 1, 2026 (OPEC+ decision)", url: "https://investinglive.com/commodities/opec-holds-december-targets-steady-for-third-month-as-hormuz-disruption-persists/" },
+        { name: "CBS News live updates, Oct 30, 2026", url: "https://www.cbsnews.com/live-updates/iran-war-donald-trump-qatar-mediators-new-proposal-end-war/" },
+        { name: "Yahoo Finance, Oct 28, 2026 (Fed decision)", url: "https://finance.yahoo.com/economy/policy/article/fed-votes-in-split-decision-to-hold-interest-rates-steady-despite-sticky-inflation-180108960.html" },
         { name: "Yahoo Finance, Oct 21, 2026 (Gulf oil flows and shipping costs)", url: "https://finance.yahoo.com/energy/articles/more-oil-flowing-persian-gulf-183858775.html" },
         { name: "AP via PBS NewsHour, Oct 26, 2026", url: "https://www.pbs.org/newshour/world/delegations-meet-in-iran-with-the-middle-east-on-edge-over-potential-for-renewed-fighting" },
-        { name: "Yahoo Finance (Reuters), Oct 23, 2026 (oil settle prices)", url: "https://finance.yahoo.com/markets/articles/tech-selloff-relents-oil-five-103308077.html" },
         { name: "CBS News live updates, Oct 26, 2026", url: "https://www.cbsnews.com/live-updates/iran-war-trump-us-diplomacy-oil-prices-strait-of-hormuz/" },
-        { name: "Times of Israel live blog, Oct 25, 2026", url: "https://www.timesofisrael.com/liveblog-october-25-2026/" },
-        { name: "AP via PBS NewsHour, Oct 22, 2026", url: "https://www.pbs.org/newshour/amp/world/iran-says-7-oil-tankers-damaged-in-strait-of-hormuz-and-other-middle-east-news" },
-        { name: "CBS News live updates, Oct 22, 2026", url: "https://www.cbsnews.com/live-updates/iran-war-trump-us-ceasefire-talks-ongoing/" },
-        { name: "TimesLIVE (Reuters), Oct 22, 2026 (Aramco headquarters)", url: "https://www.timeslive.co.za/news/world/2026-10-22-saudi-aramco-evacuates-dhahran-hq-after-houthi-attack-sources-say/" },
-        { name: "The New Arab, Oct 23, 2026", url: "https://newarab.com/news/trump-hints-new-strikes-iran-ministers-gather-istanbul" },
-        { name: "Al Jazeera, Oct 17, 2026", url: "https://www.aljazeera.com/news/2026/10/17/us-and-iran-both-claim-control-of-strait-of-hormuz-amid-attacks-on-vessels" },
-        { name: "OilPrice.com, Oct 19, 2026", url: "https://oilprice.com/Latest-Energy-News/World-News/Brent-Tops-110-as-Tanker-Attacks-Threaten-Persian-Gulf-Supply.html" },
-        { name: "CBS News live updates, Oct 18, 2026", url: "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-of-hormuz-yemen-houthis-saudi-arabia/" },
-        { name: "OPEC press release, Oct 4, 2026", url: "https://opec.org/pr-detail/1891616-4-october-2026.html" },
         { name: "EIA Short-Term Energy Outlook", url: "https://www.eia.gov/outlooks/steo/" },
         { name: "FRED: Brent spot price", url: "https://fred.stlouisfed.org/series/DCOILBRENTEU" }
       ]
@@ -71,23 +68,23 @@ window.BRIEFINGS = {
   geopolitics: [
     {
       title: "The 2026 Iran war",
-      asOf: "Oct 28, 2026",
+      asOf: "Nov 2, 2026",
       background: "Tensions between Iran and Israel and the U.S. built for years, including a 12-day war between Israel and Iran in June 2025. On Feb 28, 2026, the U.S. and Israel launched large-scale air strikes on Iran that killed Supreme Leader Ali Khamenei and other officials. U.S. and Israeli officials described the strikes as stopping threats from Iran's nuclear and missile programs; critics say the attack violated international law.",
       who: [
         "The United States and Israel",
         "Iran, including its Revolutionary Guard Corps (IRGC)",
         "Iran-aligned groups: Hezbollah in Lebanon, the Houthis in Yemen, and militias in Iraq",
         "Gulf states, including Saudi Arabia, whose territory and energy sites have been attacked",
-        "Mediators passing messages between the sides, including Pakistan and Qatar",
+        "Mediators passing messages between the sides, mainly Qatar, and earlier Pakistan",
         "The Mecca defense pact: Saudi Arabia, Pakistan and Turkey, which signed a mutual-defense agreement in August 2026 (an attack on one counts as an attack on all)"
       ],
       keyPeople: [
         { name: "Donald Trump", role: "President of the United States", why: "Decides whether the U.S. resumes strikes on Iran and whether to lift the naval blockade." },
+        { name: "JD Vance", role: "Vice President of the United States", why: "Sent a letter to Iran proposing talks and, according to The New York Times, offered to lead the U.S. side." },
         { name: "Benjamin Netanyahu", role: "Prime Minister of Israel", why: "Leads Israel's military campaign against Iran and its allies; he stays in office as caretaker while parties try to form a government after the Oct 27 election." },
         { name: "Mojtaba Khamenei", role: "Supreme Leader of Iran (since March 2026)", why: "Holds final say over Iran's military and major state decisions; according to multiple news reports, he was wounded in the February strikes and has not appeared in public since." },
         { name: "Abbas Araghchi", role: "Iran's Foreign Minister", why: "Speaks for Iran's conditions for reopening the strait and starting talks." },
-        { name: "Mohammad Bagher Ghalibaf", role: "Speaker of Iran's parliament and Iran's chief negotiator", why: "Leads Iran's side in indirect talks with the U.S." },
-        { name: "Field Marshal Asim Munir", role: "Pakistan's army chief", why: "One of the main go-betweens carrying messages between Washington and Tehran." }
+        { name: "Mohammad Bagher Ghalibaf", role: "Speaker of Iran's parliament and Iran's chief negotiator", why: "Leads Iran's side in indirect talks with the U.S." }
       ],
       timeline: [
         "March: Iran answered with missile and drone attacks on Israel, U.S. bases and Gulf states, and blocked most shipping through the Strait of Hormuz. Fighting between Israel and Hezbollah resumed, and Israel moved into southern Lebanon.",
@@ -95,44 +92,40 @@ window.BRIEFINGS = {
         "June: The U.S. and Iran signed an agreement to end the war and lift the blockades. Oil fell back near $70.",
         "July: The ceasefire collapsed after attacks on commercial ships in the Strait of Hormuz.",
         "September: The Houthis escalated in Yemen and around the Bab al-Mandeb strait, and fighting widened. Iran offered a seven-day plan to end the war; President Trump rejected it, though indirect contacts continued.",
-        "October: Attacks on ships in and near the Strait of Hormuz rose to their highest level since the war began, Houthi attacks on Saudi Arabia intensified, and U.S. and Israeli leaders publicly discussed renewed strikes on Iran."
+        "October: Attacks on ships in and near the Strait of Hormuz reached their highest monthly total of the war, Houthi attacks on Saudi Arabia intensified, and U.S. and Israeli leaders publicly discussed renewed strikes on Iran. Saudi, Pakistani and Turkish officials held talks in Tehran (Oct 26), and Qatar stepped up its role as mediator at the end of the month."
       ],
       now: [
-        "The U.S. and Iran both claim control of the Strait of Hormuz. U.S. Central Command says its naval blockade of Iran's ports (restarted July 14) has cost Iran at least $25 billion in oil revenue (CBS News; this is the U.S. military's own figure). Iran's Revolutionary Guard said seven tankers were damaged overnight into Oct 22, which has not been independently confirmed (AP); President Trump said Iran is \"making up fake hits\" to raise oil prices. On Oct 23, Iranian news agencies Tasnim and Mehr reported that Iran's military shot down a U.S. drone over the port city of Bandar Abbas; the U.S. had not commented in the sources reviewed (Seoul Economic Daily, citing Iranian media).",
-        "President Trump is publicly weighing renewed strikes. At a rally on Oct 23 he said the U.S. \"may do another little Epic Fury\" (the name of the Feb 28 campaign), and on Oct 25 he told Fox News, \"Do I make a deal with them, or do I finish them off?\" (CBS News). He also said that while he had pledged not to strike before the Nov 3 midterms, \"there's a possibility I will,\" and \"also a possibility we'll have a nice, big, beautiful agreement\" (AP, via Times of Israel). Asked on Oct 25 whether a strike could come that day, he said, \"There will not be a strike today,\" without ruling out later action (CBS News). The New York Times earlier reported, citing U.S. officials, that the U.S. and Israel have drawn up plans for strikes after the midterms; the U.S. government has not confirmed this.",
-        "Iran says its position will not change. On Oct 25, Foreign Minister Abbas Araghchi said a new war would not change Iran's policy on the Strait of Hormuz, which he said would no longer be managed as it was before the war (AP and AFP, via Seoul Economic Daily; CBS News). A Foreign Ministry spokesperson said messages are still passing through intermediaries. The New York Times reported, citing two Iranian officials, that Iran is preparing to target U.S. diplomats and personnel; a U.S. intelligence memo warned of increased Iranian efforts against Americans (as reported by the Times of Israel).",
-        "On Oct 26, Saudi Arabia's Defense Minister Khalid bin Salman, Pakistan's army chief Asim Munir and Turkey's intelligence chief Ibrahim Kalin met Iran's President Masoud Pezeshkian, security chief Mohsen Rezaei and other officials in Tehran (AP; Gulf News). Iranian state TV said the sides agreed to keep talking, and Foreign Minister Araghchi called the meeting a step toward dialogue, saying regional security should be handled by countries in the region. No deal to stop Houthi attacks on Saudi Arabia was announced. The National, citing unnamed sources, reported that Iran said it lacked leverage over the Houthis. On Oct 27, Supreme Leader Mojtaba Khamenei's office said he stressed keeping Iran's conditions for ending the war (Reuters, via Investing.com; Gulf News).",
-        "Hours after the talks, the Houthis said they fired a ballistic missile at the Ras Tanura refinery in eastern Saudi Arabia; a fire in the area was reported contained, and the Saudi-led coalition said it intercepted missiles aimed at the Eastern Province and Riyadh (Gulf News). Egypt's parliament approved military support for Saudi Arabia against the Houthis (AP), and on Oct 27 a Turkish parliamentary committee approved the Mecca defense pact with Saudi Arabia and Pakistan (AP, via Gulf News). Israel's Oct 27 election left neither main bloc with a majority (see the Israel and Gaza card)."
+        "A new round of indirect diplomacy. Vice President JD Vance sent a letter to Iran's security chief Mohsen Rezaei through Qatari mediators. The New York Times reported it proposed an early meeting of U.S. and Iranian officials led by Vance, with Iran's nuclear program on the table from the start; The Wall Street Journal said it laid out a \"framework for negotiations\"; President Trump said it was about helping Iran get \"medical supplies and various things\" (Al Jazeera; CBS News). Qatari mediators went to Tehran on Oct 30, and Iranian negotiators then spent three days in Doha; an official told Reuters their departure was not because of disagreements (Washington Times; Gulf News).",
+        "Iran's offer and conditions. Foreign Minister Abbas Araghchi said Iran agreed to shorten its plan to two days (U.S. steps on day one, the Strait of Hormuz reopens on day two), but said \"we have not yet reached a final outcome\" (TASS; Gulf News). A Foreign Ministry spokesperson said \"the ball is in America's court\" and that the strait will not reopen until the U.S. blockade ends and Iran's demands are met. Iran's army spokesman warned a new war could spread beyond the Middle East (Gulf News).",
+        "U.S. options. The Wall Street Journal reported that U.S. officials told Gulf allies to prepare for a brief but intense campaign against Iran after the Nov 3 midterms (as reported by Al Jazeera and CBS News). Secretary of State Marco Rubio said President Trump has not decided on new strikes and prefers a diplomatic solution; at a Nov 1 rally, Trump said the war would end \"very soon\" without giving a timetable. Axios reported that Prime Minister Netanyahu is urging a strike right after the midterms while Trump prefers to let talks continue (all as reported by Gulf News).",
+        "Fighting at sea and in Saudi Arabia continues. October had more attacks on ships near Hormuz than any month of the war (UKMTO, via The National). Iran's Revolutionary Guard says tankers hit mines on a route the U.S. promotes; CENTCOM says the main routes are clear and that more than 20 civilian sailors have been killed in recent months (CBS News; Gulf News). The Houthis said they attacked Saudi refineries, and the U.S. ordered non-emergency staff out of Saudi Arabia (Reuters, via CNBC).",
+        "Inside the U.S. military: Defense Secretary Pete Hegseth removed Lt. Gen. Brett Sylvia, the Joint Chiefs' top strategy and plans officer, on Oct 28 after he was accused of leaking classified information about the war. The Pentagon puts the U.S. military death toll in the war at 23, and CENTCOM estimates its cost at $47 billion (CBS News)."
       ],
       watch: [
-        "Nov 3: U.S. midterm elections. President Trump had written that the U.S. \"will not be attacking Iran at any time prior to\" the midterms (Outlook India), but on Oct 24–25 said \"there's a possibility I will\" (AP, via Times of Israel).",
-        "Late November: the USS Theodore Roosevelt carrier group and about 10,000 U.S. personnel are expected in the region, according to two U.S. officials cited by Fox News (as reported by Gulf News).",
-        "Iran's foreign minister says the strait would reopen on day six of Iran's seven-day plan, with talks on day seven, if the U.S. lifts its blockade and meets Iran's other conditions. Iran says it is still reviewing U.S. comments on the plan.",
-        "Iran's UN ambassador has asked the UN Secretary-General to call an emergency Security Council meeting about U.S. threats against Iran; no date has been set (CBS News).",
-        "Turkey's full parliament still has to vote on the Mecca defense pact; no date has been announced (Gulf News, citing AP). Sources close to Tehran told The National a second round of the regional talks could come soon, possibly in Turkey; this has not been confirmed."
+        "Nov 3: U.S. midterm elections. President Trump had written that the U.S. \"will not be attacking Iran at any time prior to\" the midterms (Outlook India); U.S. officials have told Gulf allies to prepare for a campaign after them, according to The Wall Street Journal.",
+        "Iran's reply: Iran confirmed it received the Vance letter but had not given an official response (Al Jazeera). Iran says it is waiting for U.S. answers on its two-day plan (TASS).",
+        "Late November: an additional U.S. carrier strike group and a Marine unit are set to join about 20 U.S. warships in the region (CBS News).",
+        "Turkey's full parliament still has to vote on the Mecca defense pact; no date has been announced (Gulf News, citing AP)."
       ],
-      whyMarkets: "This is the biggest driver of this year's oil swings. The oil chart lines up with the timeline: the March jump, the April peak just before the ceasefire, the drop after the June agreement, and the climbs after July and September.",
+      whyMarkets: "This is the biggest driver of this year's oil swings. The oil chart lines up with the timeline: the March jump, the April peak just before the ceasefire, the drop after the June agreement, and the climbs after July and September. Brent rose 13.6% in October alone (Reuters, via CNBC).",
       sources: [
-        { name: "Gulf News, Oct 27, 2026 (Tehran talks, Ras Tanura, Mecca pact)", url: "https://gulfnews.com/world/gulf/saudi/tehran-talks-falter-as-houthis-escalate-attacks-on-saudi-arabia-turkey-advances-defence-pact-2-1.500725947" },
-        { name: "The National, Oct 27, 2026 (inside the Tehran talks)", url: "https://thenationalnews.com/news/gulf/2026/10/27/exclusive-iran-saudi-arabia-inside-tehran-talks" },
+        { name: "Gulf News live updates, Nov 2, 2026", url: "https://gulfnews.com/world/americas/middle-east-conflict-trump-threatens-iran-with-military-action-as-tehran-warns-new-war-could-last-longer-1.500732180" },
+        { name: "Gulf News, Nov 2, 2026 (Iran's two-day plan)", url: "https://gulfnews.com/world/mena/iran-proposes-2-day-plan-to-reopen-strait-of-hormuz-amid-us-talks-1.500732117" },
+        { name: "TASS, Nov 1, 2026 (Araghchi on the Doha talks)", url: "https://tass.com/world/2211541" },
+        { name: "Al Jazeera, Oct 29, 2026 (Vance's letter)", url: "https://www.aljazeera.com/news/2026/10/29/what-we-know-of-vances-letter-to-rezaei-as-trump-warns-gulf-to-prepare" },
+        { name: "CBS News live updates, Oct 30, 2026", url: "https://www.cbsnews.com/live-updates/iran-war-donald-trump-qatar-mediators-new-proposal-end-war/" },
+        { name: "Washington Times, Oct 30, 2026 (Qatari mediators in Tehran)", url: "https://www.washingtontimes.com/news/2026/oct/30/qatari-mediators-return-tehran-talks/" },
+        { name: "The National, Oct 31, 2026 (Hormuz attacks in October)", url: "https://www.thenationalnews.com/news/mena/2026/10/31/attacks-on-ships-transiting-hormuz-in-october-highest-since-start-of-war/" },
+        { name: "CNBC (Reuters), Oct 30, 2026", url: "https://www.cnbc.com/2026/10/30/oil-rises-on-supply-concerns-as-houthis-attack-saudi-arabia.html" },
+        { name: "Gulf News, Oct 27, 2026 (Tehran talks, Mecca pact)", url: "https://gulfnews.com/world/gulf/saudi/tehran-talks-falter-as-houthis-escalate-attacks-on-saudi-arabia-turkey-advances-defence-pact-2-1.500725947" },
         { name: "AP via PBS NewsHour, Oct 26, 2026", url: "https://www.pbs.org/newshour/world/delegations-meet-in-iran-with-the-middle-east-on-edge-over-potential-for-renewed-fighting" },
-        { name: "Investing.com (Reuters), Oct 27, 2026", url: "https://www.investing.com/news/economy-news/stocks-rise-ahead-of-tech-earnings-fed-decision-4979156" },
-        { name: "CBS News live updates, Oct 26, 2026", url: "https://www.cbsnews.com/live-updates/iran-war-trump-us-diplomacy-oil-prices-strait-of-hormuz/" },
-        { name: "Times of Israel live blog, Oct 25, 2026", url: "https://www.timesofisrael.com/liveblog-october-25-2026/" },
-        { name: "Seoul Economic Daily (AP, AFP), Oct 25, 2026", url: "https://en.sedaily.com/international/2026/10/25/iran-says-hormuz-policy-unchanged-even-if-new-war-erupts" },
-        { name: "Al Jazeera, Oct 26, 2026 (Tehran security talks)", url: "https://www.aljazeera.com/news/2026/10/26/officials-from-mecca-pact-states-to-hold-talks-in-iran-amid-regional-tensions" },
-        { name: "CBS News live updates, Oct 22, 2026", url: "https://www.cbsnews.com/live-updates/iran-war-trump-us-ceasefire-talks-ongoing/" },
-        { name: "AP via PBS NewsHour, Oct 22, 2026", url: "https://www.pbs.org/newshour/amp/world/iran-says-7-oil-tankers-damaged-in-strait-of-hormuz-and-other-middle-east-news" },
-        { name: "Times of Israel live blog, Oct 22, 2026", url: "https://www.timesofisrael.com/liveblog-october-22-2026/" },
         { name: "Outlook India, Oct 22, 2026", url: "https://www.outlookindia.com/international/no-talks-but-an-end-very-soon-trumps-iran-war-claims-face-tehrans-account" },
-        { name: "CBS News live updates, Oct 18, 2026", url: "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-of-hormuz-yemen-houthis-saudi-arabia/" },
-        { name: "Gulf News live updates, Oct 20, 2026", url: "https://gulfnews.com/world/mena/middle-east-war-houthi-missiles-kill-53-us-defence-chief-visits-region-1.500716634" },
         { name: "Wikipedia: 2026 Iran war", url: "https://en.wikipedia.org/wiki/2026_Iran_war" }
       ]
     },
     {
       title: "Israel and Gaza",
-      asOf: "Oct 28, 2026",
+      asOf: "Nov 2, 2026",
       background: "On Oct 7, 2023, Hamas-led militants attacked Israel, killing about 1,200 people and taking about 250 hostages. Israel then launched a military campaign in Gaza. A ceasefire between Israel and Hamas, part of a U.S.-backed peace plan, took effect in October 2025. Its first phase brought the release of all hostages and set up a \"Board of Peace\" to oversee Gaza's transition. The next phases (Hamas giving up its weapons, a full Israeli pullout and an international security force) have not happened yet.",
       who: [
         "Israel",
@@ -142,42 +135,41 @@ window.BRIEFINGS = {
         "UN agencies providing aid, such as UNICEF and the World Food Programme"
       ],
       keyPeople: [
-        { name: "Benjamin Netanyahu", role: "Prime Minister of Israel (Likud party leader)", why: "Decides Israel's military actions in Gaza and whether Israel accepts the disarmament roadmap; his party came first in the Oct 27 election, and he stays caretaker prime minister while a government is formed." },
+        { name: "Benjamin Netanyahu", role: "Prime Minister of Israel (Likud party leader)", why: "Decides Israel's military actions in Gaza and whether Israel accepts the disarmament roadmap; his Likud party came first in the Oct 27 election, and he stays caretaker prime minister while a government is formed." },
         { name: "Khalil al-Hayya", role: "Head of Hamas's political bureau (since July 2026)", why: "Leads Hamas and its negotiating team in talks on disarmament." },
         { name: "Donald Trump", role: "President of the United States and chair of the Board of Peace", why: "Leads the U.S.-backed peace plan and the board overseeing it." },
         { name: "Nickolay Mladenov", role: "High Representative for Gaza, Board of Peace", why: "Runs day-to-day talks on carrying out the next phases of the plan." },
         { name: "Gadi Eisenkot", role: "Former Israeli army chief, leader of the Yashar! party", why: "Leads the opposition bloc, which is trying to form a government without Netanyahu after the Oct 27 election." },
-        { name: "Isaac Herzog", role: "President of Israel", why: "Chooses which party leader gets the first chance to form a government once official election results are in." }
+        { name: "Isaac Herzog", role: "President of Israel", why: "Chooses which party leader gets the first chance to form a government after receiving the official election results on Nov 4." }
       ],
       now: [
-        "Israel's Oct 27 election left no clear winner. With about 86% of votes counted, Netanyahu's bloc had 53 of 120 seats and Eisenkot's bloc 48, both short of the 61 needed to govern; Arab parties had 19, a record high. Netanyahu's Likud was the largest party (26 seats), ahead of Eisenkot's Yashar! (21). About 600,000 \"double envelope\" ballots (including soldiers' votes) were still being counted, so the numbers can change (Ynet; Times of Israel). Eisenkot said \"the public chose change\" and called on Netanyahu to step down; Netanyahu called for a \"strong, national, right-wing government.\" The shekel and Tel Aviv stocks fell on the result (Times of Israel).",
-        "The ceasefire is a year old but strained: the UN reports deadly Israeli strikes continue, and UNICEF says more than 340 children have been killed since it was announced. On Oct 9, more than 100 aid and human rights groups, including Amnesty International, Oxfam and Save the Children, said in a joint statement that the ceasefire \"exists in name only.\"",
-        "The World Food Programme says funding shortages forced it to cut food aid by about a third, and on Oct 19 said about 1.4 million people in Gaza, roughly two-thirds of the population, face crisis-level hunger or worse (Al Jazeera). On Oct 22, Qatar's Emir and France's President Emmanuel Macron jointly called for unrestricted aid and for Israeli forces to withdraw \"in accordance with the agreed arrangements\" (Al Jazeera).",
-        "Gaza's Health Ministry, which operates under Hamas, reports at least 74,544 Palestinians killed since October 2023, including 1,551 since the ceasefire took effect (as reported by Al Jazeera on Oct 25). On Oct 25, Al Jazeera reported at least eight people killed in Israeli attacks, including three security guards at the Islamic University in Gaza City. The Israeli military said that day it killed two people who moved money to Hamas and Islamic Jihad and bombed three Hamas weapons depots, which it described as a response to Hamas violations of the ceasefire (Times of Israel). On Oct 28, the Israeli military said strikes earlier in the week killed three Hamas commanders who it said were rebuilding Hamas's capabilities \"in systematic violation of the ceasefire\" (Times of Israel).",
-        "Hamas accepted a 15-point roadmap for giving up its weapons in stages on July 31. Israel did not sign it; Netanyahu reportedly rejected it on Aug 9, and Israel says it will not withdraw until Hamas is fully disarmed. Hamas says it will not act unless Israel meets its withdrawal obligations (Security Council Report; Al Jazeera). Israeli newspaper Haaretz reported that Israeli military officials told the U.S. that Hamas has no intention of disarming (as reported by the Times of Israel); Hamas has not responded to that report in the sources reviewed.",
+        "Final election results show a deadlock. Netanyahu's bloc won 53 of 120 seats and the Jewish-led parties opposing him 48, both short of the 61 needed to govern; the Arab-led Joint List and Ra'am won 19 seats, a record (NBC News; Times of Israel). Netanyahu's Likud is the largest party. Three opposition parties (Yashar!, B'Yachad and Yisrael Beytenu) have said they will not sit in a coalition with the Arab parties (Times of Israel). A senior Joint List official said the Arab parties are expected to recommend Eisenkot for prime minister (The Jerusalem Post, citing Walla).",
+        "Disputes over the vote: Netanyahu's Likud party said, without giving evidence, that Arab-led parties \"stole\" the election. The head of the elections committee, Supreme Court Justice Noam Sohlberg, said the suspicions under investigation would not undermine the vote. Police have arrested suspects in an alleged vote-buying case, some of whom police linked to Ra'am; Ra'am denies involvement. Israel's Shin Bet security service is investigating alleged foreign interference; Qatar denied funding any effort to influence the result (AP, via PBS). On Nov 1, President Herzog urged party leaders to \"stop climbing trees, and face the reality\" and signaled a push to avoid another election (Times of Israel).",
+        "The ceasefire is a year old but strained. Reuters reported on Nov 2 that at least four Palestinians were killed in Israeli strikes that day, according to local health officials; the Israeli military said it carried out two strikes \"targeting Palestinian militants.\" Health officials say at least 1,580 Palestinians have been killed since the ceasefire began and more than 74,000 since October 2023; Israel says four of its soldiers have been killed since the ceasefire (Reuters, via Arab News). Gaza's health authorities operate under Hamas. The Israeli military says Hamas commanders have been rebuilding the group's capabilities \"in systematic violation of the ceasefire\" (Times of Israel, Oct 28).",
+        "Aid and medical care: The World Food Programme says funding shortages forced it to cut food aid by about a third, and about 1.4 million people in Gaza face crisis-level hunger or worse (Al Jazeera, Oct 19). On Oct 29, Gaza's Health Ministry, which operates under Hamas, urged the Rafah crossing to Egypt to open, saying 21,468 sick and wounded people need treatment outside Gaza (Al Jazeera).",
+        "Hamas accepted a 15-point roadmap for giving up its weapons in stages on July 31. Israel did not sign it; Netanyahu reportedly rejected it on Aug 9, and Israel says it will not withdraw until Hamas is fully disarmed. Hamas says it will not act unless Israel meets its withdrawal obligations (Security Council Report; Al Jazeera). Before the vote, both Netanyahu and Eisenkot said they would restart fighting in Gaza if Hamas does not disarm (The Globe and Mail)."
       ],
       watch: [
-        "Late this week: the count of the remaining \"double envelope\" ballots is expected to finish (Ynet). Official results are expected next week; President Herzog then meets each party to decide who gets the first chance to form a government (Times of Israel).",
-        "The leader Herzog picks has 28 days (extendable by up to 14 more) to form a coalition; if no one can, Israel votes again. Netanyahu stays caretaker prime minister until then (Al Jazeera). Before the vote, both Netanyahu and Eisenkot said they would restart fighting in Gaza if Hamas does not disarm (The Globe and Mail).",
-        "In October, the UN Security Council holds its regular quarterly open debate on the Middle East, including Gaza (Security Council Report; no exact day given)."
+        "Nov 4: President Herzog receives the official results from the elections committee, then begins meetings with every party at the President's Residence to hear whom they recommend for prime minister (Times of Israel; The Jerusalem Post).",
+        "Nov 10: the new Knesset (Israel's parliament) is sworn in (Times of Israel).",
+        "The leader Herzog picks has 28 days (extendable by up to 14 more) to form a coalition; if no one can, Israel votes again. Netanyahu stays caretaker prime minister until then (Al Jazeera; The Jerusalem Post)."
       ],
-      whyMarkets: "On its own, the conflict has moved global markets less than the Iran war, because it doesn't directly affect oil supply. It matters to markets mainly through the risk of wider regional conflict, which is part of how the Iran war developed.",
+      whyMarkets: "On its own, the conflict has moved global markets less than the Iran war, because it doesn't directly affect oil supply. It matters to markets mainly through the risk of wider regional conflict, which is part of how the Iran war developed. Israel's own markets react to its politics: the shekel and Tel Aviv stocks fell after the inconclusive election result (Times of Israel).",
       sources: [
-        { name: "Ynet, Oct 28, 2026 (election results)", url: "https://www.ynetnews.com/article/hjnatbkaml" },
+        { name: "Arab News (Reuters), Nov 2, 2026 (Gaza strikes and casualty figures)", url: "https://arabnews.com/middle-east/israeli-strikes-kill-three-people-in-gaza-medics-say-3009383" },
+        { name: "Times of Israel, Nov 1, 2026 (Herzog and coalition talks)", url: "https://www.timesofisrael.com/stop-climbing-trees-and-face-reality-in-appeal-to-leaders-herzog-signals-push-for-unity-government/" },
+        { name: "The Jerusalem Post, Nov 1, 2026 (Arab parties' recommendation)", url: "https://www.jpost.com/israel-election-2026/article-913448" },
+        { name: "AP via PBS NewsHour, Nov 1, 2026 (election disputes)", url: "https://www.pbs.org/newshour/world/israeli-officials-say-elections-wont-be-undermined-and-suspects-in-bribery-case-are-freed" },
+        { name: "NBC News, Oct 29, 2026 (final results)", url: "https://www.nbcnews.com/world/israel/israels-final-election-results-show-neither-netanyahu-rival-can-immedi-rcna606290" },
+        { name: "Al Jazeera, Oct 29, 2026 (Gaza strikes and Rafah)", url: "https://www.aljazeera.com/news/2026/10/29/israeli-strikes-hit-gaza-as-health-ministry-urges-rafah-opening" },
         { name: "Times of Israel live blog, Oct 28, 2026", url: "https://www.timesofisrael.com/liveblog-october-28-2026/" },
-        { name: "Al Jazeera, Oct 25, 2026 (strikes and casualty figures)", url: "https://www.aljazeera.com/news/2026/10/25/seven-killed-in-gaza-as-israel-targets-university-campus-and-other-sites" },
-        { name: "Times of Israel live blog, Oct 25, 2026", url: "https://www.timesofisrael.com/liveblog-october-25-2026/" },
         { name: "Al Jazeera: Israel's election, five key things, Oct 26, 2026", url: "https://www.aljazeera.com/news/2026/10/26/israels-election-five-key-things-to-know" },
         { name: "The Globe and Mail, Oct 2026 (Gaza and the election)", url: "https://www.theglobeandmail.com/world/article-palestinians-gaza-expect-little-change-no-matter-wins-israeli-election/" },
-        { name: "Al Jazeera, Oct 22, 2026 (Qatar-France statement)", url: "https://www.aljazeera.com/news/2026/10/22/qatar-france-call-for-opening-of-hormuz-and-gaza-ceasefire-implementation" },
-        { name: "Times of Israel live blog, Oct 22, 2026", url: "https://www.timesofisrael.com/liveblog-october-22-2026/" },
         { name: "Al Jazeera, Oct 9, 2026 (aid groups' statement)", url: "https://www.aljazeera.com/news/2026/10/9/gaza-ceasefire-exists-in-name-only-more-than-100-ngos-say" },
-        { name: "Al Jazeera: Israel's elections explained, Oct 20, 2026", url: "https://www.aljazeera.com/news/2026/10/20/israels-elections-2026-explained-in-maps-and-charts" },
         { name: "Al Jazeera, Jul 31, 2026 (Hamas roadmap)", url: "https://www.aljazeera.com/news/2026/7/31/gaza-board-of-peace-announces-hamas-disarmament-agreement-what-we-know" },
         { name: "Security Council Report, October 2026 forecast", url: "https://www.securitycouncilreport.org/monthly-forecast/2026-10/the-middle-east-including-the-palestinian-question-26.php" },
         { name: "The National, Jul 20, 2026 (Hamas leader)", url: "https://www.thenationalnews.com/news/mena/2026/07/20/hamas-elects-khalil-al-hayya-as-new-political-leader/" },
-        { name: "UN News: Gaza", url: "https://news.un.org/en/tags/gaza" },
-        { name: "Washington Post: Israel-Gaza war", url: "https://www.washingtonpost.com/israel-hamas-war/" }
+        { name: "UN News: Gaza", url: "https://news.un.org/en/tags/gaza" }
       ]
     }
   ],
@@ -185,7 +177,7 @@ window.BRIEFINGS = {
   ai: [
     {
       title: "The AI spending boom",
-      asOf: "Oct 28, 2026",
+      asOf: "Nov 2, 2026",
       background: "Since ChatGPT launched in late 2022, big tech companies have raced to build AI, spending enormous sums on chips and data centers. That has made a few companies, especially chipmaker Nvidia, some of the most valuable in the world, and a big part of the S&P 500.",
       who: [
         "Chipmakers that make AI hardware, like Nvidia, Broadcom and AMD",
@@ -195,44 +187,40 @@ window.BRIEFINGS = {
       ],
       keyPeople: [
         { name: "Jensen Huang", role: "President and CEO of Nvidia", why: "Runs the company that sells most of the chips used to train and run AI." },
+        { name: "Andy Jassy", role: "President and CEO of Amazon", why: "Decides how much Amazon spends on AI data centers for its cloud business, AWS, one of the biggest budgets in the industry." },
+        { name: "Mark Zuckerberg", role: "Founder, Chairman and CEO of Meta", why: "Decides how much Meta spends on AI data centers and how it pays for them." },
         { name: "Hock Tan", role: "President and CEO of Broadcom", why: "Runs a major maker of custom AI chips; his Oct 14 comments on financing moved chip stocks." },
-        { name: "Mark Zuckerberg", role: "Founder, Chairman and CEO of Meta", why: "Decides how much Meta spends on AI data centers, one of the biggest budgets in the industry." },
         { name: "Sam Altman", role: "CEO of OpenAI", why: "Leads one of the biggest buyers of AI computing power, so its spending plans affect chipmakers and cloud companies." },
         { name: "Kevin Warsh", role: "Chair of the Federal Reserve", why: "Leads the Fed, whose interest rates affect how expensive it is to borrow money for data centers." }
       ],
       now: [
-        "Nvidia reported revenue of $96.2 billion for the quarter ended July 26, 2026, up 106% from a year earlier. Its data center business alone brought in $89.0 billion, up 117%. It expects about $108 billion next quarter.",
-        "Meta reported on Oct 21 that revenue grew 26% to $64.6 billion for July–September. It spent $34.9 billion on capital expenditures (\"capex\": money for long-lasting things like data centers and servers) in the quarter, and narrowed its 2026 capex forecast to $135–145 billion, from $130–145 billion. It said it expects to keep \"investing aggressively\" next year (Meta earnings release).",
-        "On Oct 26, Meta announced plans to raise up to $95 billion from investors to pay for its AI build-out, starting with $35 billion in new common and preferred stock (\"equity\": selling pieces of ownership, instead of borrowing). Nvidia committed $3 billion to the offering and AMD $1 billion, and Nvidia said it will expand work with Meta on Meta's Muse AI models (Yahoo Finance; CNBC). Yahoo Finance noted Meta is the first big tech company to hand much of its AI bill to shareholders this way.",
-        "Also on Oct 26, AI lab Anthropic publicly filed for an IPO (initial public offering: selling shares to the public for the first time), planning to list on the Nasdaq under the symbol \"ANT\"; the number of shares and price have not been set (Anthropic announcement; NPR). News reports on the filing said it showed $16.3 billion in revenue for the first half of 2026 (Yahoo Finance; CNBC).",
-        "Chip stocks have bounced back after a rough October. The chip index fell more than 6% on Oct 22 and had an eight-day losing streak through Oct 16, its longest since 2008, after Broadcom's CEO said financing could limit AI growth (Yahoo Finance; Tech Times). On Oct 27, chip stocks led the market higher for a third straight day (Yahoo Finance), and the S&P 500 rose 0.6% to 7,722.60 (Reuters, via Investing.com). The big question in markets has shifted from \"how much will companies spend?\" to \"will that spending pay off?\" Higher interest rates (see the Fed tile) make expensive data center projects harder to fund."
+        "Big tech reported results, and the spending keeps growing. Amazon's sales rose 12% to $201.9 billion for July–September; its cloud business (AWS) grew 39%, its fastest in nearly five years. Amazon spent $77.3 billion on property and equipment in the quarter, more than double a year earlier, and expects about $220 billion of capital spending in 2026 (Amazon earnings release). Microsoft's Azure cloud sales grew 48%; it lowered its full-year spending forecast to $170 billion from $175 billion because some computer capacity was delayed, and its finance chief said she expects spending to speed up in early 2027 (CNBC).",
+        "Investors are asking whether the spending will pay off. Alphabet (Google) kept its 2026 capital spending forecast at $195–205 billion, but its spending was so high that its free cash flow (cash left after paying for investments) turned negative by more than $9 billion for the quarter, and earnings and revenue missed estimates (CNBC). Its shares fell almost 13%, which the Daily Mail reported was the steepest one-day drop since Alphabet went public in 2004, wiping out about $482 billion of value (TNND). Amazon's free cash flow over the past 12 months was also negative, at $42.4 billion (Amazon earnings release).",
+        "Meta reported on Oct 21 that revenue grew 26% to $64.6 billion and narrowed its 2026 capex (\"capital expenditures\": money for long-lasting things like data centers and servers) forecast to $135–145 billion (Meta earnings release). On Oct 26 it announced plans to raise up to $95 billion from investors, starting with $35 billion in new stock (\"equity\": selling pieces of ownership, instead of borrowing); Nvidia committed $3 billion and AMD $1 billion (Yahoo Finance; CNBC).",
+        "Nvidia reported revenue of $96.2 billion for the quarter ended July 26, 2026, up 106% from a year earlier, and expects about $108 billion for the quarter that ended Oct 25. On Oct 26, AI lab Anthropic publicly filed for an IPO (initial public offering: selling shares to the public for the first time) on the Nasdaq under the symbol \"ANT\"; the number of shares and price have not been set (Anthropic announcement; NPR).",
+        "The Fed held interest rates steady at 3.75%–4% on Oct 28, after raising them in September; two officials voted for another increase (Yahoo Finance). Higher interest rates (see the Fed tile) make expensive data center projects more costly to fund."
       ],
       watch: [
-        "Oct 28: the Fed announces its interest-rate decision at the end of its two-day meeting (Yahoo Finance).",
-        "Oct 28: Alphabet (Google) reports its July–September results (company announcement). Investors will be looking at how much it plans to spend on AI.",
-        "Oct 28, after the market closes: Microsoft reports its July–September results (company announcement).",
-        "Oct 29: Amazon reports its July–September results (company announcement).",
-        "Around Nov 18: Nvidia's next earnings report, according to financial calendar sites; Nvidia had not confirmed the date. Anthropic is aiming to start trading the week of Nov 16, according to a Wall Street Journal report; the company has not announced a date."
+        "Nov 17: Nvidia reports its results for the quarter that ended Oct 25, with a call at 5 p.m. ET (Nvidia announcement).",
+        "Anthropic is aiming to start trading the week of Nov 16, according to a Wall Street Journal report; the company has not announced a date or price.",
+        "Dec 8–9: the Fed's next interest-rate meeting (Federal Reserve calendar)."
       ],
-      whyMarkets: "Because a handful of AI-linked companies make up so much of the S&P 500, news about AI spending can move a client's whole index fund, not just tech stocks.",
+      whyMarkets: "Because a handful of AI-linked companies make up so much of the S&P 500, news about AI spending can move a client's whole index fund, not just tech stocks. Alphabet's one-day drop after its results is an example: one company's earnings report can move the whole index.",
       sources: [
+        { name: "Amazon Q3 2026 results, Oct 29, 2026", url: "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/default.aspx" },
+        { name: "CNBC, Oct 29, 2026 (Microsoft and Alphabet spending)", url: "https://www.cnbc.com/2026/10/29/microsoft-google-ai-capex-estimates.html" },
+        { name: "TNND via CBS 2 Idaho, Oct 30, 2026 (Alphabet stock drop)", url: "https://idahonews.com/news/nation-world/googles-parent-company-suffers-largest-stock-market-wipeout-ever-artificial-intelligence-shareholders" },
+        { name: "Nvidia: third-quarter conference call date, Oct 28, 2026", url: "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-third-quarter-financial-results-6928873" },
+        { name: "Yahoo Finance, Oct 28, 2026 (Fed decision)", url: "https://finance.yahoo.com/economy/policy/article/fed-votes-in-split-decision-to-hold-interest-rates-steady-despite-sticky-inflation-180108960.html" },
+        { name: "Federal Reserve: FOMC meeting calendar", url: "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" },
         { name: "Yahoo Finance, Oct 27, 2026 (Nvidia invests in Meta)", url: "https://finance.yahoo.com/markets/article/nvidia-to-invest-3-billion-in-meta-expand-partnership-on-muse-125249944.html" },
         { name: "CNBC, Oct 27, 2026 (Nvidia and AMD invest in Meta)", url: "https://www.cnbc.com/2026/10/27/nvidia-invest-meta.html" },
-        { name: "Yahoo Finance market live blog, Oct 27, 2026", url: "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-october-27-dow-sp-500-nasdaq-tech-sector-160557664.html" },
         { name: "Anthropic: S-1 filing announcement, Oct 26, 2026", url: "https://www.anthropic.com/news/s1-sec" },
         { name: "NPR, Oct 26, 2026 (Anthropic IPO filing)", url: "https://www.npr.org/2026/10/26/nx-s1-6014772/anthropic-ai-ipo-could-break-records" },
-        { name: "Investing.com (Reuters), Oct 27, 2026 (market close)", url: "https://www.investing.com/news/economy-news/stocks-rise-ahead-of-tech-earnings-fed-decision-4979156" },
         { name: "Nvidia earnings release (SEC filing), Aug 26, 2026", url: "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000073/q2fy27pr.htm" },
         { name: "Meta Q3 2026 results, Oct 21, 2026", url: "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/default.aspx" },
-        { name: "Yahoo Finance, Oct 22, 2026 (chip stocks and Lam Research)", url: "https://finance.yahoo.com/markets/article/chip-stocks-fall-as-equipment-maker-lam-research-cites-supply-chain-constraints-130648719.html" },
-        { name: "Tech Times, Oct 23, 2026", url: "https://www.techtimes.com/articles/329406/20261023/chip-stocks-lose-200-billion-equipment-makers-warning-counters-nvidias-ai-optimism.htm" },
-        { name: "Yahoo Finance (24/7 Wall St.), Oct 17, 2026", url: "https://finance.yahoo.com/markets/stocks/articles/chip-stocks-just-fell-8-161520543.html" },
         { name: "Yahoo Finance, Oct 14, 2026", url: "https://finance.yahoo.com/technology/ai/articles/nvidia-broadcom-marvell-stocks-fall-191611708.html" },
-        { name: "Federal Reserve Board members", url: "https://www.federalreserve.gov/aboutthefed/bios/board/default.htm" },
-        { name: "Alphabet investor relations: Q3 2026 call date", url: "https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Date-of-Third-Quarter-2026-Financial-Results-Conference-Call-2026-8tpGZsLS6v/default.aspx" },
-        { name: "Amazon: Q3 2026 earnings date", url: "https://www.aboutamazon.com/news/company-news/amazon-earnings-q3-2026-report" },
-        { name: "Microsoft earnings date announcement (PR Newswire via Finviz), Oct 7, 2026", url: "https://finviz.com/news/400058/microsoft-announces-quarterly-earnings-release-date" },
-        { name: "Yahoo Finance (Reuters), Oct 23, 2026 (market close)", url: "https://finance.yahoo.com/markets/articles/tech-selloff-relents-oil-five-103308077.html" }
+        { name: "Federal Reserve Board members", url: "https://www.federalreserve.gov/aboutthefed/bios/board/default.htm" }
       ]
     }
   ]
