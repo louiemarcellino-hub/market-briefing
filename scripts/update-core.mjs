@@ -137,10 +137,26 @@ function yoyAt(i) {
   const yearAgo = cpiIndex.find((r) => r.year === row.year - 1 && r.month === row.month);
   return yearAgo ? (row.v / yearAgo.v - 1) * 100 : null;
 }
-const cpiLast = cpiIndex.at(-1);
-const cpiYoy = yoyAt(cpiIndex.length - 1);
-const cpiPrevYoy = yoyAt(cpiIndex.length - 2);
-const cpiMonthText = `${MONTHS_LONG[cpiLast.month]} ${cpiLast.year}`;
+// BLS skipped October 2025 (no prices were collected during the 2025 government
+// shutdown), so some months have no 12-month change. When that happens, use the
+// newest month that does have one, and say so in plain words on the tile.
+const monthName = (r) => `${MONTHS_LONG[r.month]} ${r.year}`;
+const lastWithYoy = (before) => { for (let i = before - 1; i >= 0; i--) if (yoyAt(i) !== null) return i; return -1; };
+const cpiNewest = cpiIndex.at(-1);                       // newest month BLS has published
+const cpiI = lastWithYoy(cpiIndex.length);                // newest month with a 12-month change
+const cpiPrevI = cpiI > 0 ? lastWithYoy(cpiI) : -1;       // the one before that
+const cpiLast = cpiI >= 0 ? cpiIndex[cpiI] : cpiNewest;
+const cpiYoy = cpiI >= 0 ? yoyAt(cpiI) : null;
+const cpiPrevYoy = cpiPrevI >= 0 ? yoyAt(cpiPrevI) : null;
+const cpiMonthText = monthName(cpiLast);
+const cpiPrevIsLastMonth = cpiPrevI === cpiI - 1;
+const cpiPrevMonthText = cpiPrevI >= 0 ? monthName(cpiIndex[cpiPrevI]) : "";
+let cpiGapNote = "";
+if (cpiLast !== cpiNewest) {
+  cpiGapNote = ` BLS has no 12-month figure for ${monthName(cpiNewest)}, because it didn't collect prices in ${MONTHS_LONG[cpiNewest.month]} ${cpiNewest.year - 1} (the government shutdown), so this tile shows ${cpiMonthText}, the latest month with one.`;
+} else if (cpiPrevI >= 0 && !cpiPrevIsLastMonth) {
+  cpiGapNote = ` The comparison is with ${cpiPrevMonthText}, because the month in between has no 12-month figure (BLS didn't collect prices a year earlier, during the government shutdown).`;
+}
 
 const unLast = unemp.at(-1), unPrev = unemp.at(-2);
 const unYear = unemp.slice(-13, -1).map((r) => r.v); // the 12 months before the latest
@@ -175,6 +191,16 @@ check(brentLast.v > 5 && brentLast.v < 500 && gasLast.v > 0.5 && gasLast.v < 20,
 
 // ---------- 4. Apply Louie's wording rules ----------
 const next = (m, k) => MONTHS_LONG[(m + k) % 12];
+// Louie's inflation wording, plus the plain-English note when BLS skipped a month.
+function cpiWords() {
+  const words = rules.cpi(cpiYoy, cpiPrevYoy, cpiMonthText);
+  if (!cpiPrevIsLastMonth) {
+    words.change = words.change.replace("vs. last month", `vs. ${cpiPrevMonthText}`);
+    words.rightNow = words.rightNow.replace("the month before", `in ${cpiPrevMonthText}`);
+  }
+  words.rightNow += cpiGapNote;
+  return words;
+}
 const computed = {
   sp500: { value: spLast.v.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
     source: `FRED (S&P Dow Jones Indices), close on ${niceDate(spLast.date)}`, ...rules.sp500(spChange) },
@@ -183,8 +209,8 @@ const computed = {
   fedfunds: { source: `FRED (Federal Reserve target range), ${niceDate(fedNow.date)}`,
     ...rules.fedFunds(fedNow.low, fedNow.high, fedChange) },
   cpi: { value: cpiYoy.toFixed(1) + "%", source: `BLS (CPI-U, 12-month change), ${cpiMonthText}`,
-    updates: `Monthly report · ${next(cpiLast.month, 1)}'s numbers come out in ${next(cpiLast.month, 2)}`,
-    ...rules.cpi(cpiYoy, cpiPrevYoy, cpiMonthText) },
+    updates: `Monthly report · ${next(cpiNewest.month, 1)}'s numbers come out in ${next(cpiNewest.month, 2)}`,
+    ...cpiWords() },
   unemployment: { value: unLast.v.toFixed(1) + "%", source: `BLS (seasonally adjusted), ${unMonthText}`,
     updates: `Monthly report · ${next(unLast.month, 1)}'s numbers come out in ${next(unLast.month, 2)}`,
     ...rules.unemployment(unLast.v, unPrev.v, unLow, unHigh, sahmGap) }
@@ -211,7 +237,7 @@ if (Math.abs(brentWeekChange) >= rules.BIG_OIL_WEEK) events.push({ sort: toTime(
   sourceName: "FRED: Brent crude (DCOILBRENTEU)", sourceUrl: fredLink("DCOILBRENTEU") });
 events.push({ sort: Date.UTC(cpiLast.year, cpiLast.month + 1, 15), when: `${cpiMonthText} inflation report`, relatesTo: "cpi",
   headline: `Inflation ${computed.cpi.direction === "up" ? "sped up to" : computed.cpi.direction === "down" ? "slowed to" : "held at"} ${cpiYoy.toFixed(1)}%`,
-  whatHappened: `Prices were ${cpiYoy.toFixed(1)}% higher than a year earlier, compared with ${cpiPrevYoy.toFixed(1)}% the month before. The Fed's target is 2%.`,
+  whatHappened: `Prices were ${cpiYoy.toFixed(1)}% higher than a year earlier, compared with ${cpiPrevYoy.toFixed(1)}% ${cpiPrevIsLastMonth ? "the month before" : `in ${cpiPrevMonthText}`}. The Fed's target is 2%.${cpiGapNote}`,
   whyClientsCare: "Inflation shrinks buying power and drives the Fed's rate decisions.",
   sourceName: "BLS: Consumer Price Index", sourceUrl: "https://www.bls.gov/cpi/" });
 events.push({ sort: Date.UTC(unLast.year, unLast.month + 1, 5), when: `${unMonthText} jobs report`, relatesTo: "unemployment",
