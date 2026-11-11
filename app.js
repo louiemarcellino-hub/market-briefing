@@ -60,6 +60,14 @@
     arrow.textContent = arrows[item.direction] || "";
     change.append(arrow, item.change);
 
+    // Optional extra line, e.g. inflation's month-to-month change from the latest report.
+    var monthly = null;
+    if (item.monthly) {
+      monthly = document.createElement("p");
+      monthly.className = "tile-monthly";
+      monthly.textContent = "📅 " + item.monthly;
+    }
+
     var source = document.createElement("p");
     source.className = "tile-source";
     source.textContent = "Source: " + item.source;
@@ -116,7 +124,9 @@
     });
     showStage();
 
-    tile.append(name, value, change, source, button, learn);
+    tile.append(name, value, change);
+    if (monthly) tile.append(monthly);
+    tile.append(source, button, learn);
     tilesBox.append(tile);
   });
 
