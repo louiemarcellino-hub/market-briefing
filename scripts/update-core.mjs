@@ -106,6 +106,7 @@ const [sp, t10, fedLow, fedHigh, brent, wti, gas] = [
   await fred("DCOILBRENTEU"), await fred("DCOILWTICO"), await fred("GASREGW")
 ];
 const cpiIndex = await bls("CUUR0000SA0");
+const cpiSeasonal = await bls("CUSR0000SA0"); // seasonally adjusted, for the month-to-month change
 const unemp = await bls("LNS14000000");
 
 // ---------- 2. Work out the numbers ----------
@@ -150,6 +151,19 @@ const cpiYoy = cpiI >= 0 ? yoyAt(cpiI) : null;
 const cpiPrevYoy = cpiPrevI >= 0 ? yoyAt(cpiPrevI) : null;
 const cpiMonthText = monthName(cpiLast);
 const cpiPrevIsLastMonth = cpiPrevI === cpiI - 1;
+
+// Monthly report: the newest month vs. the month right before it (seasonally
+// adjusted, the figure the news headlines use). Shown only if the two months
+// are back to back, so a missing month never produces a wrong comparison.
+const momLast = cpiSeasonal.at(-1), momPrev = cpiSeasonal.at(-2);
+const backToBack = (momLast.year * 12 + momLast.month) - (momPrev.year * 12 + momPrev.month) === 1;
+const cpiMonthly = backToBack ? (momLast.v / momPrev.v - 1) * 100 : null;
+let cpiMonthlyText = null;
+if (cpiMonthly !== null) {
+  const pct = Math.abs(cpiMonthly).toFixed(1);
+  const moved = pct === "0.0" ? "were unchanged" : cpiMonthly > 0 ? `rose ${pct}%` : `fell ${pct}%`;
+  cpiMonthlyText = `Monthly report (${monthName(momLast)}): prices ${moved} from ${MONTHS_LONG[momPrev.month]} (seasonally adjusted)`;
+}
 const cpiPrevMonthText = cpiPrevI >= 0 ? monthName(cpiIndex[cpiPrevI]) : "";
 let cpiGapNote = "";
 if (cpiLast !== cpiNewest) {
@@ -186,6 +200,7 @@ check(Math.abs(spChange) < 40, "S&P weekly change");
 check(t10Last.v > 0 && t10Last.v < 25, "10-year yield");
 check(fedNow.high > fedNow.low && fedNow.high < 25, "Fed range");
 check(cpiYoy !== null && cpiPrevYoy !== null && Math.abs(cpiYoy) < 30, "inflation");
+check(cpiMonthly === null || Math.abs(cpiMonthly) < 5, "monthly inflation");
 check(unLast.v > 0 && unLast.v < 40, "unemployment");
 check(brentLast.v > 5 && brentLast.v < 500 && gasLast.v > 0.5 && gasLast.v < 20, "energy prices");
 
@@ -210,6 +225,7 @@ const computed = {
     ...rules.fedFunds(fedNow.low, fedNow.high, fedChange) },
   cpi: { value: cpiYoy.toFixed(1) + "%", source: `BLS (CPI-U, 12-month change), ${cpiMonthText}`,
     updates: `Monthly report · ${next(cpiNewest.month, 1)}'s numbers come out in ${next(cpiNewest.month, 2)}`,
+    ...(cpiMonthlyText ? { monthly: cpiMonthlyText } : {}),
     ...cpiWords() },
   unemployment: { value: unLast.v.toFixed(1) + "%", source: `BLS (seasonally adjusted), ${unMonthText}`,
     updates: `Monthly report · ${next(unLast.month, 1)}'s numbers come out in ${next(unLast.month, 2)}`,
